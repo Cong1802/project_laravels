@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +14,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [HomeController::class, 'index']);
+Route::prefix('admin')->group(function () {
+    Route::get('/', [AdminController::class, 'index']);
+    Route::get('/login', [AdminController::class, 'ShowViewLogin']);
+    Route::post('/LoginAdmin', [AdminController::class, 'postLogin']);
 
-Route::get('/', function () {
-    return view('welcome');
 });
