@@ -28,21 +28,15 @@ class AdminController extends Controller
             'password' => bcrypt($request->password),
         ];
         $val = $request->only(['email', 'password']);
-        // dd($login);
         if (Auth::attempt($val)) {
             return redirect('admin');
         } else {
             return redirect()->back()->with('status', 'Email hoặc Password không chính xác');
         }
     }
-
-    /**
-     * action admincp/logout
-     * @return RedirectResponse
-     */
-    public function getLogout()
+    public function LogoutAdmin()
     {
         Auth::logout();
-        return redirect()->route('getLogin');
+        return redirect('/admin/login');
     }
 }

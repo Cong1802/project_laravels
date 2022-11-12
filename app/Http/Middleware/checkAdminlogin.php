@@ -31,7 +31,7 @@ class checkAdminlogin
                 return redirect()->route('getLogin');
             }
         } else
-            return redirect('admincp/login');
+            return redirect('admin/login');
 
     }
 }

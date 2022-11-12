@@ -4,34 +4,53 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdminLTE 3 | Dashboard</title>
-
+  <meta name="csrf-token" content="{{ csrf_token() }}" />
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href={{ asset ("public/frontend/plugins/fontawesome-free/css/all.min.css")}}>
+  <link rel="stylesheet" href={{ asset ("public/admin/plugins/fontawesome-free/css/all.min.css")}}>
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href= {{ asset("public/frontend/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css")}}>
+  <link rel="stylesheet" href= {{ asset("public/admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css")}}>
   <!-- iCheck -->
-  <link rel="stylesheet" href= {{ asset("public/frontend/plugins/icheck-bootstrap/icheck-bootstrap.min.css")}}>
+  <link rel="stylesheet" href= {{ asset("public/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css")}}>
   <!-- JQVMap -->
-  <link rel="stylesheet" href= {{ asset("public/frontend/plugins/jqvmap/jqvmap.min.css")}}>
+  <link rel="stylesheet" href= {{ asset("public/admin/plugins/jqvmap/jqvmap.min.css")}}>
   <!-- Theme style -->
-  <link rel="stylesheet" href= {{ asset("public/frontend/dist/css/adminlte.min.css")}}>
+  <link rel="stylesheet" href= {{ asset("public/admin/dist/css/adminlte.min.css")}}>
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href= {{ asset("public/frontend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css")}}>
+  <link rel="stylesheet" href= {{ asset("public/admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css")}}>
   <!-- Daterange picker -->
-  <link rel="stylesheet" href= {{ asset("public/frontend/plugins/daterangepicker/daterangepicker.css")}}>
+  <link rel="stylesheet" href= {{ asset("public/admin/plugins/daterangepicker/daterangepicker.css")}}>
   <!-- summernote -->
-  <link rel="stylesheet" href= {{ asset("public/frontend/plugins/summernote/summernote-bs4.min.css")}}>
+  <link rel="stylesheet" href= {{ asset("public/admin/plugins/summernote/summernote-bs4.min.css")}}>
+  <!-- jsGrid -->
+  <link rel="stylesheet" href={{ asset("public/admin/plugins/jsgrid/jsgrid.min.css")}}>
+  <link rel="stylesheet" href={{ asset("public/admin/plugins/jsgrid/jsgrid-theme.min.css")}}>
+  <link rel="stylesheet" href={{ asset("public/admin/plugins/daterangepicker/daterangepicker.css")}}>
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href={{ asset("public/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css")}}>
+  <!-- Bootstrap Color Picker -->
+  <link rel="stylesheet" href={{ asset("public/admin/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css")}}>
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href={{ asset("public/admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css")}}>
+  <!-- Select2 -->
+  <link rel="stylesheet" href={{ asset("public/admin/plugins/select2/css/select2.min.css")}}>
+  <link rel="stylesheet" href={{ asset("public/admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css")}}>
+  <!-- Bootstrap4 Duallistbox -->
+  <link rel="stylesheet" href={{ asset("public/admin/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css")}}>
+  <!-- BS Stepper -->
+  <link rel="stylesheet" href={{ asset("public/admin/plugins/bs-stepper/css/bs-stepper.min.css")}}>
+  <!-- dropzonejs -->
+  <link rel="stylesheet" href={{ asset("public/admin/plugins/dropzone/min/dropzone.min.css")}}>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src= {{ asset("public/frontend/dist/img/AdminLTELogo.png")}} alt="AdminLTELogo" height="60" width="60">
+    <img class="animation__shake" src= {{ asset("public/admin/dist/img/AdminLTELogo.png")}} alt="AdminLTELogo" height="60" width="60">
   </div>
 
   <!-- Navbar -->
@@ -83,7 +102,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src= {{ asset("public/frontend/dist/img/user1-128x128.jpg")}} alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <img src= {{ asset("public/admin/dist/img/user1-128x128.jpg")}} alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Brad Diesel
@@ -99,7 +118,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src= {{ asset("public/frontend/dist/img/user8-128x128.jpg")}} alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src= {{ asset("public/admin/dist/img/user8-128x128.jpg")}} alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   John Pierce
@@ -115,7 +134,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src= {{ asset("public/frontend/dist/img/user3-128x128.jpg")}} alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src= {{ asset("public/admin/dist/img/user3-128x128.jpg")}} alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Nora Silvester
@@ -176,7 +195,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src= {{ asset("public/frontend/dist/img/AdminLTELogo.png")}} alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src= {{ asset("public/admin/dist/img/AdminLTELogo.png")}} alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
 
@@ -185,10 +204,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src= {{ asset("public/frontend/dist/img/user2-160x160.jpg")}} class="img-circle elevation-2" alt="User Image">
+          <img src= {{ asset("public/admin/dist/img/user2-160x160.jpg")}} class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">{{ Auth::user()->name }}</a>
         </div>
       </div>
 
@@ -440,27 +459,27 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Tables
+                Users
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
+                <a href={{ URL::to("/admin/role") }} class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Simple Tables</p>
+                  <p>Role</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
+                <a href={{ URL::to("/admin/customer") }} class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>DataTables</p>
+                  <p>Customer</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/jsgrid.html" class="nav-link">
+                <a href={{ URL::to("/admin/manager") }} class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>jsGrid</p>
+                  <p>Manager</p>
                 </a>
               </li>
             </ul>
@@ -840,6 +859,12 @@
               <p>Informational</p>
             </a>
           </li>
+          <li class="nav-header bg-light">
+            <a href={{ url('admin/logout') }} class="nav-link">
+              <img style="height:24px;with:24px" class="mr-2" src={{ asset('public/admin/dist/img/logout.png')}}>
+              <p>LOGOUT</p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -848,29 +873,7 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-
-    <!-- Main content -->
     @yield('content')
-    <!-- /.content -->
-  </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
@@ -889,38 +892,153 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src= {{ asset ("public/frontend/plugins/jquery/jquery.min.js")}}></script>
+<script src= {{ asset ("public/admin/plugins/jquery/jquery.min.js")}}></script>
 <!-- jQuery UI 1.11.4 -->
-<script src= {{ asset ("public/frontend/plugins/jquery-ui/jquery-ui.min.js")}}></script>
+<script src= {{ asset ("public/admin/plugins/jquery-ui/jquery-ui.min.js")}}></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
-<script src= {{ asset ("public/frontend/plugins/bootstrap/js/bootstrap.bundle.min.js")}}></script>
+<script src= {{ asset ("public/admin/plugins/bootstrap/js/bootstrap.bundle.min.js")}}></script>
 <!-- ChartJS -->
-<script src= {{ asset ("public/frontend/plugins/chart.js/Chart.min.js")}}></script>
+<script src= {{ asset ("public/admin/plugins/chart.js/Chart.min.js")}}></script>
 <!-- Sparkline -->
-<script src= {{ asset ("public/frontend/plugins/sparklines/sparkline.js")}}></script>
+<script src= {{ asset ("public/admin/plugins/sparklines/sparkline.js")}}></script>
 <!-- JQVMap -->
-<script src= {{ asset ("public/frontend/plugins/jqvmap/jquery.vmap.min.js")}}></script>
-<script src= {{ asset ("public/frontend/plugins/jqvmap/maps/jquery.vmap.usa.js")}}></script>
+<script src= {{ asset ("public/admin/plugins/jqvmap/jquery.vmap.min.js")}}></script>
+<script src= {{ asset ("public/admin/plugins/jqvmap/maps/jquery.vmap.usa.js")}}></script>
 <!-- jQuery Knob Chart -->
-<script src= {{ asset ("public/frontend/plugins/jquery-knob/jquery.knob.min.js")}}></script>
+<script src= {{ asset ("public/admin/plugins/jquery-knob/jquery.knob.min.js")}}></script>
 <!-- daterangepicker -->
-<script src= {{ asset ("public/frontend/plugins/moment/moment.min.js")}}></script>
-<script src= {{ asset ("public/frontend/plugins/daterangepicker/daterangepicker.js")}}></script>
+<script src= {{ asset ("public/admin/plugins/moment/moment.min.js")}}></script>
+<script src= {{ asset ("public/admin/plugins/daterangepicker/daterangepicker.js")}}></script>
 <!-- Tempusdominus Bootstrap 4 -->
-<script src= {{ asset ("public/frontend/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js")}}></script>
+<script src= {{ asset ("public/admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js")}}></script>
 <!-- Summernote -->
-<script src= {{ asset ("public/frontend/plugins/summernote/summernote-bs4.min.js")}}></script>
+<script src= {{ asset ("public/admin/plugins/summernote/summernote-bs4.min.js")}}></script>
 <!-- overlayScrollbars -->
-<script src= {{ asset ("public/frontend/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js")}}></script>
+<script src= {{ asset ("public/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js")}}></script>
 <!-- AdminLTE App -->
-<script src={{ asset ("public/frontend/dist/js/adminlte.js")}}></script>
+<script src={{ asset ("public/admin/dist/js/adminlte.js")}}></script>
 <!-- AdminLTE for demo purposes -->
-<script src={{ asset ("public/frontend/dist/js/demo.js")}}></script>
+<script src={{ asset ("public/admin/dist/js/demo.js")}}></script>
+<!--sweetalert -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- jsGrid -->
+<script src={{ asset ("public/admin/plugins/jsgrid/demos/db.js")}}></script>
+<script src={{ asset ("public/admin/plugins/jsgrid/jsgrid.min.js")}}></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src={{ asset ("public/frontend/dist/js/pages/dashboard.js")}}></script>
+<script src={{ asset ("public/admin/dist/js/pages/dashboard.js")}}></script>
+<script>
+  $(function () {
+    $("#jsGrid1").jsGrid({
+        height: "100%",
+        width: "100%",
+
+        sorting: true,
+        paging: true,
+
+        data: db.clients,
+
+        fields: [
+            { name: "Name", type: "text", width: 150 },
+            { name: "Age", type: "number", width: 50 },
+            { name: "Address", type: "text", width: 200 },
+            { name: "Country", type: "select", items: db.countries, valueField: "Id", textField: "Name" },
+            { name: "Married", type: "checkbox", title: "Is Married" }
+        ]
+    });
+  });
+
+  $('.nav-link').each(function (){
+    var local = $(this).attr('href');
+    if(window.location.href == local)
+    {
+      $(this).parents('.nav-item').addClass('menu-is-opening menu-open');
+      $(this).addClass('text-primary');
+    }
+  })
+  
+  function delete_user(id)
+  {
+    $('.btn-delete-user').attr('data-id',id);
+  }
+  $('.btn-delete-user').click(function(){
+    var id = $(this).attr('data-id');
+    $.ajax({
+      
+      url:"{{ URL::to('admin/delete_user') }}",
+      data:{
+        id:id
+      },
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+      type: 'POST',
+      success: function(data) {
+        var success = JSON.parse(data);
+        if(success.status == 200)
+        {
+          swal("Thành công", "Xóa tài khoản thành công", "success");
+          setTimeout(() => {
+            location.reload();
+          }, 1000);
+        }
+      }
+    })
+  })
+
+  // upload file logo
+  var forward_style_img = $('.forward_style_img');
+  var upload_logo_vehicle = $('.upload_logo_vehicle');
+  var upload_logo_vehicle_done = $('.upload_logo_vehicle_done');
+
+  window.addEventListener('load', function () {
+      document.querySelector('input[type="file"]').addEventListener('change', function () {
+          if (this.files && this.files[0]) {
+              var img = document.querySelector('img.ready_upload_logo');
+              img.onload = () => {
+                  URL.revokeObjectURL(img.src);  // no longer needed, free memory
+              }
+
+              img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+          }
+          $('.upload_logo_vehicle').hide();
+          $('.upload_logo_vehicle_done').show();
+          // reloadImg();
+      });
+  });
+
+  $('.del_logo').click(function () {
+      $('.ready_upload_logo').attr('src', '');
+      $('.upload_logo_vehicle_done').hide();
+      $('.upload_logo_vehicle').show();
+      // reloadImg();
+  })
+
+  $('#city').change(function(){
+    var cit_id = $(this).val();
+    $.ajax({
+        url:'{{ URL::to('admin/ajaxCity') }}',
+        data:{
+            cit_id:cit_id,
+        },
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        type:'POST',
+        success: function(data)
+        {
+            var district = JSON.parse(data);
+            var html = '<option disabled selected>Quận / huyện</option>';
+            $.each(district, function(index, val) {
+                  html += '<option value="'+val.cit_id+'">'+val.cit_name+'</option>'
+            });
+            $("#district").html(html);
+        }
+    });
+  })
+</script>
 </body>
 </html>

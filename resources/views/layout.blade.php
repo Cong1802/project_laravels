@@ -1,132 +1,910 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NGUYEN BA CONG - RUADEMON</title>
+    <!-- Meta Tags -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Availablecoder">
+    <meta name="description" content="Tomas Personal Porfolio one-page template for freelance usage and person resume">
+    <meta name="keywords" content="person,resume,skills,skill,portoflio,multipourpose,web template, landing page, personal portfolio, personal landing page, personal portfolio landing page template">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- - - - -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico">
+    <!-- - - - -->
+    <!-- CSS Plugins -->
+    <link rel="stylesheet" href={{ asset ("public/frontend/css/bootstrap.css")}}>
+    <link rel="stylesheet" href={{ asset ("public/frontend/css/all.css")}}>
+    <link rel="stylesheet" href={{ asset ("public/frontend/css/jquery.animatedheadline.css")}}>
+    <link rel="stylesheet" href={{ asset ("public/frontend/css/animate.css")}}>
+    <link rel="stylesheet" href={{ asset ("public/frontend/css/swiper.css")}}>
+    <link rel="stylesheet" href={{ asset ("public/frontend/css/fancybox.css")}}>
+    <link rel="stylesheet" href={{ asset ("public/frontend/css/odometer-theme-minimal.css")}}>
+    <!-- - - - -->
+    <!-- Main CSS Files -->
+    <link rel="stylesheet" href={{ asset ("public/frontend/css/style_dark.css")}}>
+    <link rel="stylesheet" href={{ asset ("public/frontend/css/responsive.css")}}>
+    <!-- - - - -->
+</head>
+<body>
 
-        <title>Laravel</title>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="load-splitter"></div>
+        <div class="load-splitter"></div>
+        <div class="loader">
+            <p class="text">RuaDemon<span>.</span></p>
+            <div class="loading-bar">
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- - - - -->
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}
-        </style>
-
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
+    <!-- Start Header -->
+    <header class="header-sliding">
+        <nav class="navbar w-100 navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand logo p-0" href="index.html">
+                    RUADEMON
+                </a>
+                <button class="navbar-toggler menu-toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="header-nav-icon"></span>
+                    <span class="header-nav-icon"></span>
+                    <span class="header-nav-icon"></span>
+                </button>
+                <div class="ul-cont collapse navbar-collapse ms-0 ms-lg-auto" id="navbarSupportedContent">
+                    <ul class="navbar-nav navbar-right ms-0 ms-lg-auto mb-2 mb-lg-0">
+                        <li class="nav-item mx-1">
+                            <a class="nav-link active" data-scroll="home" href="#home">Trang chủ </a>
+                        </li>
+                        <li class="nav-item mx-1">
+                            <a class="nav-link" href="#about" data-scroll="about">Giới thiệu</a>
+                        </li>
+                        <li class="nav-item mx-1">
+                            <a class="nav-link" href="#services" data-scroll="services">Dịch vụ</a>
+                        </li>
+                        <li class="nav-item mx-1">
+                            <a class="nav-link" href="#resume" data-scroll="resume">Hoạt Động</a>
+                        </li>
+                        <li class="nav-item mx-1">
+                            <a class="nav-link" href="#portfolio" data-scroll="portfolio">Các dự án đã làm</a>
+                        </li>
+                        <!--<li class="nav-item mx-1">-->
+                        <!--    <a class="nav-link" href="#reviews" data-scroll="reviews">Reviews</a>-->
+                        <!--</li>-->
+                        <li class="nav-item mx-1">
+                            <a class="nav-link" href="#blog" data-scroll="blog">Blog For Me </a>
+                        </li>
+                        <li class="nav-item mx-1">
+                            <a class="nav-link" href="#contact" data-scroll="contact">Liên Hệ</a>
+                        </li>
+                    </ul>
                 </div>
-            @endif
-
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
+            </div>
+        </nav>
+    </header>
+    <!-- End Header -->
+    <!-- Start Home -->
+    <section class="home d-flex align-items-center" id="home">
+        <div class="container">
+            <div class="home-text text-center text-md-start">
+                <p class="intro mx-auto mx-md-0">Xin chào</p>
+                <p class="name">I&acute;m <span>Nguyen BA CONG</span> </p>
+                <div class="head-text" id="home-text-changer">
+                    <h1 class="ah-headline">
+                        <span>I&acute;m </span>
+                        <span class="ah-words-wrapper">
+                            <b class="is-visible">Web Designer</b>
+                            <b>Web Developer</b>
+                            <b>Mobile Developer</b>
+                        </span>
+                    </h1>
+                </div>
+                <div class="home-social d-flex justify-content-center justify-content-md-start mt-3">
+                    <a href="https://www.facebook.com/muaroi.lanhra/"><i class="fab fa-facebook-f"></i></a>
+                    <!--<a href="#"><i class="fab fa-twitter"></i></a>-->
+                    <!-- <a href="https://www.instagram.com/ng.n.hieu.2110/"><i class="fab fa-instagram"></i></a> -->
+                    <!--<a href="#"><i class="fab fa-linkedin-in"></i></a>-->
                 </div>
 
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
-                            </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Home -->
+    <!-- Start About -->
+    <section class="about section-padding" id="about">
+        <div class="container d-flex flex-column flex-md-row">
+            <div class="image wow fadeInLeft">
+                <img class="img-fluid w-100" src={{ asset ("public/frontend/images/IMG_2469.JPG")}} alt="about">
+                <div class="movable-border">
+                    <span></span>
+                </div>
+            </div>
+            <div class="about-content wow fadeInRight">
+                <div class="main-heading about-main-heading mx-auto mx-md-0">
+                    <h2>Giới thiệu </h2>
+                    <span>-Tôi tên-</span>
+                </div>
+                <p class="about-text">
+                 Nguyễn Như Hiếu : Sinh ra tại một làng quê nghèo trong vùng thôn dã, lớn lên trong một gia đình cần lao, giàu lòng yêu nước, sớm giác ngộ lý tưởng cách mạng. Tuổi trẻ thông minh đỉnh ngộ. Tương truyền mới sinh Hiếu không khóc không cười. Một hôm có 1 vị đạo sĩ đi qua thấy Hiếu chơi trước cửa, liền nói. Người này có dung mạo tọa thiên long, đầu gối sơn, chân đạp thủy, bên tả có thanh long, bên phải có bạch hổ, con nhà này chỉ mười tám năm sau, chắc chắn sẽ thành người lớn. Mọi người thấy vậy, cho là sự lạ, hết sức chăm sóc. Quả nhiên, Hiếu 6 tuổi đã đi học lớp 1, 8 tuổi đã đọc thông viết thạo, lên 9 tuổi đã biết cộng trừ nhân chia. Ai gặp cũng phải trầm trồ khâm phục. Giới học vấn uyên thâm, 18 tuổi đã xong tú tài, trên thông thiên văn, dưới tường địa lý, giữa hiểu nhân luân, ai hỏi gì cũng trả lời được, tuyệt nhiên không sai câu nào. Đến năm 19 tuổi Hiếu lui về ở ẩn. Thăm thú sự đời, thấy việc gì có lợi là làm
+                </p>
+                <div class="about-info">
+                    <ul>
+                        <li><span>Họ và tên:</span> Nguyễn Như Hiếu</li>
+                        <li><span>Ngày sinh:</span> 21/10/2000</li>
+                        <li><span>Email:</span> nhuhieu21102000@gmail.com</li>
+                        <li><span>Địa chỉ:</span>Tân Dân - Sóc Sơn - Hà Nội</li>
+                    </ul>
+                </div>
+                <div class="cv-button">
+                    <a class="main-btn" href="#">
+                        <i class="fas fa-inbox"></i>
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!--End About -->
+     <!--Start Services -->
+    <section class="services section-padding" id="services">
+        <div class="container">
+            <div class="main-heading mx-auto">
+                <h2 class="main-head-animation">Công Việc</h2>
+                <span>Những gì tôi làm</span>
+            </div>
+            <div class="services-field mt-4 row">
+                <div class="serv-box mb-2 mt-5 col-12 col-md-6 col-lg-4 wow fadeInUp">
+                    <div class="serv-cont cursor-pointer-hover p-3 position-relative">
+                        <div class="icon">
+                            <i class="fas fa-sitemap"></i>
                         </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
+                        <h3 class="text-center pt-4 pb-2">Web Development</h3>
+                        <p class="text-center">Thiết kế trang web</p>
+                    </div>
+                </div>
+                <div class="serv-box mb-2 mt-5 col-12 col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="serv-cont cursor-pointer-hover p-3 position-relative">
+                        <div class="icon">
+                            <i class="fas fa-palette"></i>
                         </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
+                        <h3 class="text-center pt-4 pb-2">UI / UX design</h3>
+                        <p class="text-center">Thiết kế giao diện người dùng</p>
+                    </div>
+                </div>
+                <!--<div class="serv-box mb-2 mt-5 col-12 col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">-->
+                <!--    <div class="serv-cont cursor-pointer-hover p-3 position-relative">-->
+                <!--        <div class="icon">-->
+                <!--            <i class="fas fa-mobile-alt"></i>-->
+                <!--        </div>-->
+                <!--        <h3 class="text-center pt-4 pb-2">Mobile Apps</h3>-->
+                <!--        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum praesentium quo quasi. Sit, saepe impedit!</p>-->
+                <!--    </div>-->
+                <!--</div>-->
+                <div class="serv-box mb-2 mt-5 col-12 col-md-6 col-lg-4 wow fadeInUp">
+                    <div class="serv-cont cursor-pointer-hover p-3 position-relative">
+                        <div class="icon">
+                            <i class="fas fa-shield-alt"></i>
                         </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
-                                </div>
-                            </div>
+                        <h3 class="text-center pt-4 pb-2">Cyber Security</h3>
+                        <p class="text-center">Bảo mật trang web</p>
+                    </div>
+                </div>
+                <!--<div class="serv-box mb-2 mt-5 col-12 col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">-->
+                <!--    <div class="serv-cont cursor-pointer-hover p-3 position-relative">-->
+                <!--        <div class="icon">-->
+                <!--            <i class="fas fa-database"></i>-->
+                <!--        </div>-->
+                <!--        <h3 class="text-center pt-4 pb-2">Database Analysis</h3>-->
+                <!--        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum praesentium quo quasi. Sit, saepe impedit!</p>-->
+                <!--    </div>-->
+                <!--</div>-->
+                <!--<div class="serv-box mb-2 mt-5 col-12 col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">-->
+                <!--    <div class="serv-cont cursor-pointer-hover p-3 position-relative">-->
+                <!--        <div class="icon">-->
+                <!--            <i class="fas fa-mail-bulk"></i>-->
+                <!--        </div>-->
+                <!--        <h3 class="text-center pt-4 pb-2">Marketing</h3>-->
+                <!--        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum praesentium quo quasi. Sit, saepe impedit!</p>-->
+                <!--    </div>-->
+                <!--</div>-->
+            </div>
+            <div class="more-services text-center mt-4 pt-2">
+                <a href="#" class="main-btn"></a>
+            </div>
+        </div>
+    </section>
+     <!--End Services -->
+     <!--Start Resume -->
+    <section class="resume section-padding" id="resume">
+        <div class="container">
+            <div class="main-heading mx-auto">
+                <h2 class="main-head-animation">Sơ yếu lý lịch</h2>
+                <span>Học vấn</span>
+            </div>
+            <div class="resume-field mt-5 row">
+                <div class="experience-box mb-3 mb-lg-0 col-12 col-lg-6">
+                    <div class="experience-content resume-content">
+                        <div class="wow bounceIn res-head mb-3 mb-sm-5 d-flex justify-content-sm-start justify-content-center align-items-center">
+                            <i class="fas fa-laptop-code"></i>
+                            <h3 class="mb-0">Kinh nghiệm của tôi</h3>
+                        </div>
+                        <div class="wow fadeInLeft res-text">
+                            <span class="res-circle"></span>
+                            <h4>Website thương mại điện tử</h4>
+                            <span class="date">09/2019 - 12/2019</span>
+                            <p class="info">Vị trí: 1 trong 2 coder chính.<br>
+                                - Thiết kế và code website thương mại điện tử  <br>
+                                - Sử dụng :<br>
+                                    + Ngôn ngữ lập trình PHP.<br>
+                                    + Framework Laravel  <br>
+                                    + Microsoft SQL Server - Kinh nghiệm <br>
+                                    + Làm việc với mô hình MVC  <br>
+                                    + Làm các chức năng thêm, sửa, xóa.<br>
+                                    + Trau dồi kiến thức về Microsoft Sql server  .<br>
+                                    + Khả năng học tập và làm việc độc lập.<br>
+                                - Kết quả :<br>
+                                    + Hoàn thành dự án và bảo vệ môn.</p><br>
+                        </div>
+                        <div class="wow fadeInLeft res-text" data-wow-delay="0.2s">
+                            <span class="res-circle"></span>
+                            <h4>Làm việc tại Công ty Cổ phần công nghệ kỹ thuật Vtech</h4>
+                            <span class="date">09/2021 - 12/2021</span>
+                            <p class="info">Vị trí: Thực tập sinh<br>
+                                    - Thiết kế và code website giáo dục điện tử.<br>
+                                    - Sử dụng :<br>
+                                     + Ngôn ngữ lập trình HTML5/CSS và Javascript.<br>
+                                     + Phần mềm photoshop cs5.<br>
+                                     + Đảm nhiệm công việc thiết kế cho website.<br>
+                                    - Kết quả :<br>
+                                     + Hoàn thành dự án và đạt kết quả tốt trong quá trình thực tập.</p><br>
+                        </div>
+                        <div class="wow fadeInLeft res-text" data-wow-delay="0.4s">
+                            <span class="res-circle"></span>
+                            <h4>Làm việc tại Theanh28 Entertainment</h4>
+                            <span class="date">06/2022 - Hiện tại</span>
+                            <p class="info">Vị trí: Nhân viên lập trình PHP</p><br>
+                                            - Làm dự án 28land và nhiều dự án khác của công ty giao mà mình được giao.
                         </div>
                     </div>
                 </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
-
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
+                <div class="education-box col-12 col-lg-6">
+                    <div class="education-content resume-content">
+                        <div class="wow bounceIn res-head mb-3 mb-sm-5 d-flex justify-content-sm-start justify-content-center align-items-center">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h3 class="mb-0">Trình Độ Học Vấn</h3>
                         </div>
-                    </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                        <div class="wow fadeInLeft res-text" data-wow-delay="0.1s">
+                            <span class="res-circle"></span>
+                            <h4>Trường Cao đẳng Thực hành FPT Polytechnic Hà Nội </h4>
+                            <span class="date">08/2018 - 08/2021</span>
+                            <p class="info">Tốt nghiệp <br>
+                                            Chuyên ngành: Thiết Kế Website<br>
+                                            Điểm trung bình: 7.0</p>
+                        </div>
+                        <!--<div class="wow fadeInLeft res-text" data-wow-delay="0.3s">-->
+                        <!--    <span class="res-circle"></span>-->
+                        <!--    <h4>Mobile development online certificate</h4>-->
+                        <!--    <span class="date">2013</span>-->
+                        <!--    <p class="info">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem</p>-->
+                        <!--</div>-->
+                        <!--<div class="wow fadeInLeft res-text" data-wow-delay="0.5s">-->
+                        <!--    <span class="res-circle"></span>-->
+                        <!--    <h4>Cyber Security online certificate</h4>-->
+                        <!--    <span class="date">2018</span>-->
+                        <!--    <p class="info">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem</p>-->
+                        <!--</div>-->
                     </div>
                 </div>
             </div>
         </div>
-    </body>
+    </section>
+     <!--End Resume -->
+     <!--Start Skills -->
+    <section class="skills section-padding" id="skills">
+        <div class="container">
+            <div class="main-heading mx-auto">
+                <h2 class="main-head-animation">Kỹ năng</h2>
+                <span>Kĩ năng của tôi</span>
+            </div>
+            <div class="skill-field mt-5 row">
+                <div class="skill-box col-12 col-lg-6">
+                    <div class="skill-piece">
+                        <p class="name mb-2">HTML</p>
+                        <div class="skill-loader">
+                            <span data-progress="70%" class="loader-liquid"></span>
+                            <span class="loader-value">70%</span>
+                        </div>
+                    </div>
+                    <div class="skill-piece">
+                        <p class="name mb-2">CSS</p>
+                        <div class="skill-loader">
+                            <span data-progress="70%" class="loader-liquid"></span>
+                            <span class="loader-value">70%</span>
+                        </div>
+                    </div>
+                    <div class="skill-piece">
+                        <p class="name mb-2">JS</p>
+                        <div class="skill-loader">
+                            <span data-progress="70%" class="loader-liquid"></span>
+                            <span class="loader-value">70%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-box col-12 col-lg-6">
+                    <div class="skill-piece">
+                        <p class="name mb-2">Bootstrap</p>
+                        <div class="skill-loader">
+                            <span data-progress="50%" class="loader-liquid"></span>
+                            <span class="loader-value">50%</span>
+                        </div>
+                    </div>
+                    <div class="skill-piece">
+                        <p class="name mb-2">PHP</p>
+                        <div class="skill-loader">
+                            <span data-progress="50%" class="loader-liquid"></span>
+                            <span class="loader-value">50%</span>
+                        </div>
+                    </div>
+                    <div class="skill-piece">
+                        <p class="name mb-2">Photoshop</p>
+                        <div class="skill-loader">
+                            <span data-progress="50%" class="loader-liquid"></span>
+                            <span class="loader-value">50%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!--End Skills -->
+     <!--Start Projects -->
+    <section class="portfolio section-padding" id="portfolio">
+        <div class="container">
+            <div class="main-heading mx-auto">
+                <h2 class="main-head-animation">Dự Án</h2>
+                <span>Của Tôi</span>
+            </div>
+            <div class="prog-filter wow fadeIn">
+                <ul class="ps-0">
+                    <li class="cursor-pointer-hover active" data-filter="all">Tất cả</li>
+                    <li class="cursor-pointer-hover" data-filter=".design">Design</li>
+                    <li class="cursor-pointer-hover" data-filter=".development">Development</li>
+                    <!--<li class="cursor-pointer-hover" data-filter=".marketing">Marketing</li>-->
+                </ul>
+            </div>
+            <div class="port-field row" id="portfolio-shuffle">
+                <div class="mix design prog-box col-12 col-md-6 col-lg-4 mb-4" data-order="1">
+                    <a data-fancybox="gallery" class="d-block position-relative" data-caption="Design: Project Title" href="images/portfolio/anhnen.jpg")}}>
+                        <img class="img-fluid w-100 d-block" src={{ asset ("public/frontend/images/portfolio/anhnen.jpg")}} alt="portfolio">
+                        <div class="port-disc">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <i class="fas fa-search-plus"></i>
+                            <h4>Project Title</h4>
+                            <p class="type mb-0">Design</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="mix development prog-box col-12 col-md-6 col-lg-4 mb-4" data-order="2">
+                    <a data-fancybox="gallery" data-caption="Development: Project Title" class="d-block position-relative" href="images/portfolio/anhnen.jpg")}}>
+                        <img class="img-fluid w-100 d-block" src={{ asset ("public/frontend/images/portfolio/anhnen.jpg")}} alt="portfolio">
+                        <div class="port-disc">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <i class="fas fa-search-plus"></i>
+                            <h4>Project Title</h4>
+                            <p class="type mb-0">Development</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="mix design prog-box col-12 col-md-6 col-lg-4 mb-4" data-order="3">
+                    <a data-fancybox="gallery" data-caption="Design: Project Title" class="d-block position-relative" href="images/portfolio/anhnen.jpg")}}>
+                        <img class="img-fluid w-100 d-block" src={{ asset ("public/frontend/images/portfolio/anhnen.jpg")}} alt="portfolio">
+                        <div class="port-disc">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <i class="fas fa-search-plus"></i>
+                            <h4>Project Title</h4>
+                            <p class="type mb-0">Design</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="mix marketing prog-box col-12 col-md-6 col-lg-4 mb-4" data-order="4">
+                   <a data-fancybox="gallery" data-caption="Marketing: Project Title" class="d-block position-relative" href="images/portfolio/portfolio4.jpg")}}>
+                       <img class="img-fluid w-100 d-block" src={{ asset ("public/frontend/images/portfolio/portfolio4.jpg")}} alt="portfolio">
+                       <div class="port-disc">
+                           <span></span>
+                           <span></span>
+                           <span></span>
+                           <span></span>
+                           <i class="fas fa-search-plus"></i>
+                           <h4>Project Title</h4>
+                           <p class="type mb-0">Marketing</p>
+                       </div>
+                   </a>
+                </div>
+                <div class="mix development prog-box col-12 col-md-6 col-lg-4 mb-4" data-order="5">
+                   <a data-fancybox="gallery" data-caption="Development: Project Title" class="d-block position-relative" href="images/portfolio/portfolio5.jpg")}}>
+                       <img class="img-fluid w-100 d-block" src={{ asset ("public/frontend/images/portfolio/portfolio5.jpg")}} alt="portfolio">
+                       <div class="port-disc">
+                           <span></span>
+                           <span></span>
+                           <span></span>
+                           <span></span>
+                           <i class="fas fa-search-plus"></i>
+                           <h4>Project Title</h4>
+                           <p class="type mb-0">Development</p>
+                       </div>
+                   </a>
+                </div>
+                <div class="mix marketing prog-box col-12 col-md-6 col-lg-4 mb-4" data-order="6">
+                   <a data-fancybox="gallery" data-caption="Marketing: Project Title" class="d-block position-relative" href="images/portfolio/portfolio6.jpg")}}>
+                       <img class="img-fluid w-100 d-block" src={{ asset ("public/frontend/images/portfolio/portfolio6.jpg")}} alt="portfolio">
+                       <div class="port-disc">
+                           <span></span>
+                           <span></span>
+                           <span></span>
+                           <span></span>
+                           <i class="fas fa-search-plus"></i>
+                           <h4>Project Title</h4>
+                           <p class="type mb-0">Marketing</p>
+                       </div>
+                   </a>
+                </div>
+            </div>
+            <div class="more-projects text-center mt-4 pt-2">
+                <a href="#" class="main-btn"></a>
+            </div>
+        </div>
+       
+    </section>
+     <!--End Projects -->
+     <!--Start Counter -->
+    <section class="counter pt-5 pb-5" id="counter">
+       <div class="container">
+           <div class="row counter-area">
+               <div class="wow fadeInLeft col-12 col-lg-3 col-md-6 text-center">
+                   <i class="far fa-hand-rock d-block mb-2"></i>
+                   <span class="odometer" data-count="10">00</span>
+                   <h4>Years of experience</h4>
+               </div>      
+               <div class="wow fadeInLeft col-12 col-lg-3 col-md-6 text-center" data-wow-delay="0.3s">
+                   <i class="far fa-handshake d-block mb-2"></i>
+                   <span class="odometer" data-count="173">00</span>
+                   <h4>Successful Projects </h4>
+               </div>
+               <div class="wow fadeInLeft col-12 col-lg-3 col-md-6 text-center" data-wow-delay="0.6s">
+                   <i class="far fa-smile-beam d-block mb-2"></i>
+                   <span class="odometer" data-count="261">00</span>
+                   <h4>Happy Clients</h4>
+               </div>
+               <div class="wow fadeInLeft col-12 col-lg-3 col-md-6 text-center" data-wow-delay="0.9s">
+                   <i class="fas fa-award d-block mb-2"></i>
+                   <span class="odometer" data-count="22">00</span>
+                   <h4>Awards achieved</h4>
+               </div>
+           </div>
+       </div>
+    </section>
+     <!--End Counter -->
+     <!--Start Reviews -->
+    <section class="reviews section-padding" id="reviews">
+       <div class="container">
+           <div class="main-heading mx-auto">
+               <h2 class="main-head-animation">Reviews</h2>
+               <span>Clients Feedback</span>
+           </div>
+           <div class="review-field row justify-content-between align-items-center">
+               <div class="wow bounceInUp review-swiper-image col-3">
+                   <div class="swiper-wrapper">
+                       <div class="swiper-slide px-0">
+                           <img class="img-fluid w-100" src={{ asset ("public/frontend/images/clients/client1.jpg")}} alt="clients reviews">
+                       </div>
+                       <div class="swiper-slide px-0">
+                           <img class="img-fluid w-100" src={{ asset ("public/frontend/images/clients/client2.jpg")}} alt="clients reviews">
+                       </div>
+                       <div class="swiper-slide px-0">
+                           <img class="img-fluid w-100" src={{ asset ("public/frontend/images/clients/client3.jpg")}} alt="clients reviews">
+                       </div>
+                   </div>
+               </div>
+               <div class="review-swiper-text position-relative col-12 col-lg-8">
+                   <div class="swiper-wrapper">
+                       <div class="swiper-slide">
+                           <div class="client-info">
+                               <div class="review-head py-3">
+                                   <img class="text-slider-image mx-auto" src={{ asset ("public/frontend/images/clients/client1.jpg")}} alt="clients reviews">
+                                   <div class="rev-box d-flex align-items-center justify-content-lg-start justify-content-center">
+                                       <i class="fas fa-quote-left pe-3 pt-2"></i>
+                                       <div class="review-details">
+                                           <h4 class="client-name mb-2">Hunter Rad</h4>
+                                           <div class="rating d-flex">
+                                               <i class="mx-1 fas fa-star"></i>
+                                               <i class="mx-1 fas fa-star"></i>
+                                               <i class="mx-1 fas fa-star"></i>
+                                               <i class="mx-1 fas fa-star"></i>
+                                               <i class="mx-1 fas fa-star"></i>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               <q>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in</q>
+                               <div class="review-dates d-flex justify-content-between mt-3">
+                                   <div class="client-project"><span>Project Type: </span>Website design</div>
+                                   <p class="date"><span>Receiving date: </span>30 jan 2018</p>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="swiper-slide">
+                           <div class="client-info">
+                               <div class="review-head py-3">
+                                   <img class="text-slider-image mx-auto" src={{ asset ("public/frontend/images/clients/client2.jpg")}} alt="clients reviews">
+                                   <div class="rev-box d-flex align-items-center justify-content-lg-start justify-content-center">
+                                       <i class="fas fa-quote-left pe-3 pt-2"></i>
+                                       <div class="review-details">
+                                           <h4 class="client-name mb-2">Gleda Wilson</h4>
+                                           <div class="rating d-flex">
+                                               <i class="mx-1 fas fa-star"></i>
+                                               <i class="mx-1 fas fa-star"></i>
+                                               <i class="mx-1 fas fa-star"></i>
+                                               <i class="mx-1 fas fa-star"></i>
+                                               <i class="mx-1 fas fa-star"></i>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               <q>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm</q>
+                               <div class="review-dates d-flex justify-content-between mt-3">
+                                   <div class="client-project"><span>Project Type: </span>Database modification</div>
+                                   <p class="date"><span>Receiving date: </span>5 Feb 2019</p>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="swiper-slide">
+                           <div class="client-info">
+                               <div class="review-head py-3">
+                                   <img class="text-slider-image mx-auto" src={{ asset ("public/frontend/images/clients/client3.jpg")}} alt="clients reviews">
+                                   <div class="rev-box d-flex align-items-center justify-content-lg-start justify-content-center">
+                                       <i class="fas fa-quote-left pe-3 pt-2"></i>
+                                       <div class="review-details">
+                                           <h4 class="client-name mb-2">Eadric Jakob</h4>
+                                           <div class="rating d-flex">
+                                               <i class="mx-1 fas fa-star"></i>
+                                               <i class="mx-1 fas fa-star"></i>
+                                               <i class="mx-1 fas fa-star"></i>
+                                               <i class="mx-1 fas fa-star"></i>
+                                               <i class="mx-1 fas fa-star"></i>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               <q>The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in</q>
+                               <div class="review-dates d-flex justify-content-between mt-3">
+                                   <div class="client-project"><span>Project Type: </span>Mobile application</div>
+                                   <p class="date"><span>Receiving date: </span>17 Sept 2020</p>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="swiper-pagination swiper-pagination-white cursor-pointer-hover"></div>
+                       <div class="swiper-button-next d-none d-sm-flex swiper-button-white cursor-pointer-hover"></div>
+                       <div class="swiper-button-prev d-none d-sm-flex swiper-button-white cursor-pointer-hover"></div>
+                   </div>
+               </div>
+           </div>
+<!--  -->
+       </div>
+    </section>
+     <!-- End Reviews -->
+     <!-- Start Blog -->
+    <section class="blog section-padding" id="blog">
+        <div class="container">
+            <div class="main-heading mx-auto">
+                <h2 class="main-head-animation">Blog</h2>
+                <span>Bài viết </span>
+            </div>
+            <div class="blog-field pt-4 row">
+               <div class="wow fadeInDown blog-box mb-4 col-12 col-md-6 col-lg-4">
+                   <div class="blog-content">
+                       <a href="#" data-bs-toggle="modal" data-bs-target="#blogModal1" data-popup="first-pop" class="show-pop image d-block position-relative overflow-hidden">
+                           <img class="img-fluid w-100 d-block" src={{ asset ("public/frontend/images/blog/blog1.jpg")}} alt="blog image">
+                           <span class="blog-title">Web</span>
+                       </a>
+                       <h3 class="blog-head my-2 px-2">Web development technology</h3>
+                       <p class="blog-text mb-3 px-2">The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz</p>
+                       <hr class="my-0">
+                       <div class="blog-links d-flex justify-content-between align-items-center p-2">
+                           <div class="blog-rating">
+                               <a class="blog-like ms-1 me-3" href="#">173</a>
+                               <a class="blog-comment" href="#">34</a>
+                           </div>
+                           <div class="more">
+                               <a class="show-pop" href="#" data-bs-toggle="modal" data-bs-target="#blogModal1">Read More</a>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="wow fadeInDown blog-box mb-4 col-12 col-md-6 col-lg-4" data-wow-delay="0.4s">
+                   <div class="blog-content">
+                       <a href="#" data-bs-toggle="modal" data-bs-target="#blogModal2" class="image d-block position-relative overflow-hidden">
+                           <img class="img-fluid w-100 d-block" src={{ asset ("public/frontend/images/blog/blog2.jpg")}} alt="blog image">
+                           <span class="blog-title">Mobile</span>
+                       </a>
+                       <h3 class="blog-head my-2 px-2">Flutter technology</h3>
+                       <p class="blog-text mb-3 px-2">The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz</p>
+                       <hr class="my-0">
+                       <div class="blog-links d-flex justify-content-between align-items-center p-2">
+                           <div class="blog-rating">
+                               <a class="blog-like ms-1 me-3" href="#">173</a>
+                               <a class="blog-comment" href="#">34</a>
+                           </div>
+                           <div class="more">
+                               <a href="#" data-bs-toggle="modal" data-bs-target="#blogModal2">Read More</a>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="wow fadeInDown blog-box mb-4 mx-auto col-12 col-md-6 col-lg-4" data-wow-delay="0.8s">
+                   <div class="blog-content">
+                       <a href="#" data-bs-toggle="modal" data-bs-target="#blogModal3" class="image d-block position-relative overflow-hidden">
+                           <img class="img-fluid w-100 d-block" src={{ asset ("public/frontend/images/blog/blog3.jpg")}} alt="blog image">
+                           <span class="blog-title">Design</span>
+                       </a>
+                       <h3 class="blog-head my-2 px-2">Attractive designs</h3>
+                       <p class="blog-text mb-3 px-2">The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz</p>
+                       <hr class="my-0">
+                       <div class="blog-links d-flex justify-content-between align-items-center p-2">
+                           <div class="blog-rating">
+                               <a class="blog-like ms-1 me-3" href="#">173</a>
+                               <a class="blog-comment" href="#">34</a>
+                           </div>
+                           <div class="more">
+                               <a href="#" data-bs-toggle="modal" data-bs-target="#blogModal3">Read More</a>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+            </div>
+            <div class="more-blogs text-center mt-4 pt-2">
+                <a href="#" class="main-btn">Chưa có gì để viết ạ :(</a>
+            </div>
+        </div>
+    </section>
+     <!--End Blog -->
+     <!--Start Contact -->
+    <section class="contact section-padding" id="contact">
+        <div class="container">
+            <div class="main-heading mx-auto">
+                <h2 class="main-head-animation">Liên Hệ</h2>
+                <span>Gửi Liên Hệ </span>
+            </div>
+            <div class="contact-field my-4 row flex-wrap-reverse">
+                <div class="contact-info-field p-2 col-12 col-md-4">
+                    <div class="location">
+                        <!--<i class="fas fa-street-view"></i>-->
+                        <h5>Địa Chỉ
+                            <a
+                                data-fancybox
+                                data-type="iframe"
+                                data-preload="false"
+                                data-width="640"
+                                data-height="480"
+                                href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1172.9349234002402!2d105.76504082921744!3d21.250457249033833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x35e3325df9e27d81!2zMjHCsDE1JzAxLjYiTiAxMDXCsDQ1JzU2LjEiRQ!5e1!3m2!1svi!2s!4v1663927748071!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </h5>
+                        <address class="mb-0">Xuân Long - Tân Dân - Sóc Sơn - Hà Nội</address>
+                    </div>
+                    <div class="email">
+                        <i class="far fa-envelope"></i>
+                        <h5>Email</h5>
+                        <a href="mailto:nhuhieu21102000@gmail.com">nhuhieu21102000@gmail.com</a>
+                    </div>
+                    <div class="phone">
+                        <i class="fas fa-phone-alt"></i>
+                        <h5>Số điện thoại</h5>
+                        <a href="tel:#">+84 0867682000</a>
+                    </div>
+                    <div class="social">
+                        <i class="fas fa-share-alt"></i>
+                        <h5>Link liên kết mạng xã hội của tôi</h5>
+                        <div class="social-links pt-2 d-flex align-items-center justify-content-center">
+                            <a class="mx-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-2" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-2" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-field p-4 col-12 col-md-8">
+                    <form class="contact-form" action="php/contact.php" method="POST">
+                        <div class="name mb-3">
+                            <input class="w-100 p-2" type="text" name="name" required placeholder="Name">
+                        </div>
+                        <div class="email mb-3">
+                            <input class="w-100 p-2" type="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required placeholder="Email">
+                        </div>
+                        <div class="message mb-3">
+                            <textarea class="w-100 p-2" name="message" required placeholder="Message"></textarea>
+                        </div>
+                        <button type="submit">Gửi</button>
+                        <p class="mt-3 contact-message"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!--End Contact -->
+     <!--Start Footer -->
+    <footer>
+        <div class="container position-relative d-flex flex-column flex-md-row align-items-center justify-content-between">
+            <p class="copy mb-2 mb-md-0">&copy; NGUYEN BA CONG - N.C.B</p>
+            <div class="addition-links">
+                <a href="#"></a>
+                
+                <a href="#"></a>
+            </div>
+            <a class="scroll-top" href="#">
+                <i class="fas fa-angle-up"></i>
+            </a>
+        </div>
+    </footer>
+    <!-- End Footer -->
+    <!-- start pop -->
+    <div class="modal fade" id="blogModal1" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="container">
+                <div class="modal-content">
+                    <div class="modal-header position-relative">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            <i class="far fa-times-circle"></i>
+                        </button>
+                    </div>
+                    <span class="pop-info">Blog-Details
+                        <a href="#">Web</a>
+                    </span>
+                    <img src={{ asset ("public/frontend/images/blog/blog1.jpg")}} alt="blog image">
+                    <div class="modal-body">
+                        <h3 class="blog-title">Web development technology</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque</p>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic</p>
+                        <div class="blog-quote">
+                            <q>The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab</q>
+                        </div>
+                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in</p>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-between">
+                        <div class="blog-share d-flex">
+                            <span class="pe-2">Share:</span>
+                            <ul class="ps-0 mb-0 d-flex">
+                                <li class="px-2"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li class="px-2"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li class="px-2"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li class="px-2"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                        <span class="date">
+                            <i class="far fa-calendar-alt"></i>
+                            26 Oct 2021
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="blogModal2" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="container">
+                <div class="modal-content">
+                    <div class="modal-header position-relative">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            <i class="far fa-times-circle"></i>
+                        </button>
+                    </div>
+                    <span class="pop-info">Blog-Details
+                        <a href="#">Mobile</a>
+                    </span>
+                    <img src={{ asset ("public/frontend/images/blog/blog2.jpg")}} alt="blog image">
+                    <div class="modal-body">
+                        <h3 class="blog-title">Flutter technology</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque</p>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic</p>
+                        <div class="blog-quote">
+                            <q>The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab</q>
+                        </div>
+                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in</p>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-between">
+                        <div class="blog-share d-flex">
+                            <span class="pe-2">Share:</span>
+                            <ul class="ps-0 mb-0 d-flex">
+                                <li class="px-2"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li class="px-2"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li class="px-2"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li class="px-2"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                        <span class="date">
+                            <i class="far fa-calendar-alt"></i>
+                            26 Oct 2021
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="blogModal3" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="container">
+                <div class="modal-content">
+                    <div class="modal-header position-relative">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            <i class="far fa-times-circle"></i>
+                        </button>
+                    </div>
+                    <span class="pop-info">Blog-Details
+                        <a href="#">Design</a>
+                    </span>
+                    <img src={{ asset ("public/frontend/images/blog/blog3.jpg")}} alt="blog image">
+                    <div class="modal-body">
+                        <h3 class="blog-title">Attractive designs</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque</p>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic</p>
+                        <div class="blog-quote">
+                            <q>The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab</q>
+                        </div>
+                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in</p>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-between">
+                        <div class="blog-share d-flex">
+                            <span class="pe-2">Share:</span>
+                            <ul class="ps-0 mb-0 d-flex">
+                                <li class="px-2"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li class="px-2"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li class="px-2"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li class="px-2"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                        <span class="date">
+                            <i class="far fa-calendar-alt"></i>
+                            26 Oct 2021
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End pop -->
+
+    <!-- Start Cursor -->
+    <div class="fancy-cursor-dot"></div>
+    <!-- End Cursor -->
+
+    <!-- JS Files -->
+    <script src={{ asset ("public/frontend/js/jQuery.js")}}></script>
+    <script src={{ asset ("public/frontend/js/jquery.appear.js")}}></script>
+    <script src={{ asset ("public/frontend/js/bootstrap.js")}}></script>
+    <script src={{ asset ("public/frontend/js/jquery.animatedheadline.js")}}></script>
+    <script src={{ asset ("public/frontend/js/particles.js")}}></script>
+    <script src={{ asset ("public/frontend/js/particles_shape_dark.js")}}></script>
+    <script src={{ asset ("public/frontend/js/swiper.js")}}></script>
+    <script src={{ asset ("public/frontend/js/wow.js")}}></script>
+    <script src={{ asset ("public/frontend/js/odometer.js")}}></script>
+    <script src={{ asset ("public/frontend/js/mixitup.js")}}></script>
+    <script src={{ asset ("public/frontend/js/fancybox.umd.js")}}></script>
+    <script src={{ asset ("public/frontend/js/main.js")}}></script>
+    <!-- - - - -->
+</body>
 </html>
