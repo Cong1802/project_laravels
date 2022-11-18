@@ -8,6 +8,14 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('layout');
+        return view('HomeLayout');
+    }
+    public function creator()
+    {
+        return view('pages.creator');
+    }
+    public function Contact()
+    {
+        return view('pages.FormContact');
     }
 }

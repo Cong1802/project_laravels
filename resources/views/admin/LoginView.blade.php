@@ -12,17 +12,15 @@
   <!-- icheck bootstrap -->
   <link rel="stylesheet" href= {{ asset ("public/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css")}}>
   <!-- Theme style -->
-  <link rel="stylesheet" href= {{ asset ("public/admin/dist/css/adminlte.min.css")}}>
+  <link rel="stylesheet" href= {{ asset ("public/admin/dist/css/login.css")}}>
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
-  <div class="login-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
-  </div>
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <div class="login-box">
+        <h2>Login</h2>
         @if (count($errors) >0)
         <ul>
             @foreach($errors->all() as $error)
@@ -36,69 +34,44 @@
                 <li class="text-danger"> {{ session('status') }}</li>
             </ul>
         @endif
-      <form action={{ URL::to('admin/LoginAdmin')}} method="post">
-        @csrf
-        <div class="input-group mb-3">
-          <input type="email" name="email" class="form-control" placeholder="Email">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
+        <form action={{ URL::to('admin/LoginAdmin')}} method="post">
+          @csrf
+          <div class="user-box">
+            <input type="text" name="email" autocomplete="email" required>
+            <label>Username</label>
           </div>
-        </div>
-        <div class="input-group mb-3">
-          <input type="password" name="password" class="form-control" placeholder="Password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
+          <div class="user-box">
+            <input type="password" name="password" autocomplete="off" required>
+            <label>Password</label>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
-            </div>
+          <div class="d-flex">
+            <small>Forgot password?</small>&nbsp;&nbsp;
+            <small href="#">Register</small>
           </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>
+          <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <button type="submit">Submit</button>
+          </a>
 
-      <div class="social-auth-links text-center mb-3">
-        <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-        </a>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-        </a>
+        </form>
       </div>
-      <!-- /.social-auth-links -->
-
-      <p class="mb-1">
-        <a href="forgot-password.html">I forgot my password</a>
-      </p>
-      <p class="mb-0">
-        <a href="register.html" class="text-center">Register a new membership</a>
-      </p>
     </div>
     <!-- /.login-card-body -->
   </div>
 </div>
 <!-- /.login-box -->
-
+<button onclick="location.href='{{ URL::to ('/')}}'" type="button" id="backhome"><ion-icon name="arrow-back"></ion-icon></ion-icon></button>
 <!-- jQuery -->
 <script src={{ asset ("public/admin/plugins/jquery/jquery.min.js")}}></script>
 <!-- Bootstrap 4 -->
 <script src={{ asset ("public/admin/plugins/bootstrap/js/bootstrap.bundle.min.js")}}></script>
 <!-- AdminLTE App -->
 <script src={{ asset ("public/admin/dist/js/adminlte.min.js")}}></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
+
