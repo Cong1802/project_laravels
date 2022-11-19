@@ -18,6 +18,14 @@ class AdminController extends Controller
     {
         return view('admin.LoginView');
     }
+    public function ForogtPassword()
+    {
+        return view('admin.forgotPass');
+    }
+    public function RegisterView()
+    {
+        return view('admin.Register');
+    }
     /**
      * @param LoginAdminRequest $request
      * @return RedirectResponse

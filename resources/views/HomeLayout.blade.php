@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Pop HTML CSS Template</title>
+    <meta name="description" content="My profile - Lưu trữ thông tin của bạn">
+    <link rel="icon" href={{ asset ('public/frontend/home/img/logo.png') }}>
+    <title>My profile</title>
 <!--
 
 Template 2097 Pop
@@ -19,14 +20,31 @@ https://www.tooplate.com/view/2097-pop
     <link rel="stylesheet" type="text/css" href={{ asset ("public/frontend/home/slick/slick.css")}}/>                       <!-- http://kenwheeler.github.io/slick/ -->
     <link rel="stylesheet" type="text/css" href={{ asset ("public/frontend/home/slick/slick-theme.css")}}/>
     <link rel="stylesheet" href={{ asset ("public/frontend/home/css/tooplate-style.css")}}>  
-    <link rel="stylesheet" href={{ asset ("public/frontend/home/css/general.scss")}}>                                    <!-- Templatemo style -->
-    
+    <link rel="stylesheet" href={{ asset ("public/frontend/home/css/general.scss")}}>        
+    <link rel="stylesheet" href={{ asset ("public/frontend/home/css/clock.css")}}>         
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>                        <!-- Templatemo style -->
 </head>
+<style>
+.swiper-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
 
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, 
+    transparent, #0006);
+}
+  </style>
 <body>
     @include("include.header")
+    @include("include.clock")
     <div id="tm-wrap">
-        <div class="tm-main-content">
+        <div class="tm-main-content ">
             <div class="container tm-site-header-container">
                 <div class="row">
                     <div class="col-sm-12 col-md-6 col-lg-6 col-md-col-xl-6 mb-md-0 mb-sm-4 mb-4 tm-site-header-col">
@@ -44,31 +62,25 @@ https://www.tooplate.com/view/2097-pop
                                         <div class="tm-nav-link">
                                             <i class="fas fa-home fa-3x tm-nav-icon"></i>
                                             <span class="tm-nav-text">Welcome</span>
-                                            <div class="product__bg"></div>        
+                                            <div class="product__bg"></div>     
                                         </div>                                    
                                         <div class="product__description">
-                                            <div class="row mb-3">
-                                                <div class="col-12">
-                                                    <h2 class="tm-page-title">Welcome to Pop Design</h2>        
+                                            <div class="swiper-container">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide" style="background-image:url(https://i.postimg.cc/Z0ktfskN/peter-broomfield-m3m-ln-R90u-M-unsplash.jpg)"></div>
+                                                    <div class="swiper-slide" style="background-image:url(https://i.postimg.cc/MTTSXjbn/brandon-atchison-e-BJWhlq-WR54-unsplash.jpg)"></div>
+                                                    <div class="swiper-slide" style="background-image:url(https://i.postimg.cc/8cfgmQYD/campbell-3-ZUs-NJhi-Ik-unsplash.jpg)"></div>
+                                                    <div class="swiper-slide" style="background-image:url(https://i.postimg.cc/8Ck5BcmS/evgeny-tchebotarev-aiwu-Lj-LPFn-U-unsplash.jpg)"></div>
+                                                    <div class="swiper-slide" style="background-image:url(https://i.postimg.cc/66F8J9tr/hakon-sataoen-qyfco1nf-Mtg-unsplash.jpg)"></div>
+                                                    <div class="swiper-slide" style="background-image:url(https://i.postimg.cc/ydbzRYvv/joey-banks-YApi-Wyp0lqo-unsplash.jpg)"></div>
+                                                    <div class="swiper-slide" style="background-image:url(https://i.postimg.cc/NGKKzyqG/joshua-koblin-eq-W1-MPin-EV4-unsplash.jpg)"></div>
+                                                    <div class="swiper-slide" style="background-image:url(https://i.postimg.cc/JhK81QJw/marcus-p-o-UBjd22g-F6w-unsplash.jpg)"></div>
                                                 </div>
-                                            </div>                                        
-                                            <div class="row">
-                                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                                                    <img src={{ asset ("public/frontend/home/img/welcome-1.jpg")}} class="img-fluid mb-3">
-                                                    <p>You are allowed to download, modify and use this template for your commercial or business websites. </p>
-                                                    <p>Please tell your friends about <a rel="nofollow" href="https://fb.com/tooplate" target="_parent">Tooplate</a>. That will be very helpful for us. Thank you.</p>    
-                                                </div>
-                                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                                                    <p>You are NOT allowed to put this template ZIP file for a download purpose on any template collection website.</p>
-                                                    <p>If you have any kind of question or comment, please feel free to <a rel="nofollow" href="https://www.tooplate.com/contact" target="_parent">contact us</a>. You are welcome.</p>
-                                                    <img src={{ asset ("public/frontend/home/img/welcome-2.jpg")}} class="img-fluid">
-                                                </div>                                        
-                                            </div>
-                                            
+                                                <div class="swiper-pagination"></div>
+                                            </div>   
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="grid__item" id="team-link">
                                     <div class="product">
                                         <div class="tm-nav-link">
@@ -190,11 +202,15 @@ https://www.tooplate.com/view/2097-pop
     @include("include.IconContact")
     @include("include.loading")
     <!-- load JS -->
+
     <script src={{ asset ("public/frontend/home/js/jquery-3.2.1.slim.min.js")}}></script>         <!-- https://jquery.com/ -->    
-    <script src={{ asset ("public/frontend/home/slick/slick.min.js")}}></script>                  <!-- http://kenwheeler.github.io/slick/ -->  
     <script src={{ asset ("public/frontend/home/js/anime.min.js")}}></script>                     <!-- http://animejs.com/ -->
     <script src={{ asset ("public/frontend/home/js/main.js")}}></script>   
     <script src="https://kit.fontawesome.com/95a02bd20d.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+
+</script>
     <script>      
         function setupFooter() {
             var pageHeight = $('.tm-site-header-container').height() + $('footer').height() + 100;
@@ -221,7 +237,7 @@ https://www.tooplate.com/view/2097-pop
 
             $('.tm-current-year').text(new Date().getFullYear());  // Update year in copyright           
         });
+    </script>            
 
-    </script>             
 </body>
 </html>

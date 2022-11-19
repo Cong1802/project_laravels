@@ -47,12 +47,15 @@ body {
   width: 100%;
   height: 100%;
 }
-
+.details 
+{
+  position: absolute;
+}
 #tm-wrap {
   display: flex;
   align-items: center;
   height: 100%;
-  min-height: 100vh;
+  width: 100vw;
 }
 
 .tm-main-content {
@@ -64,9 +67,13 @@ body {
   right: 0;
   top: 0;
   bottom: 0;
+  z-index:100;
   overflow: auto;
 }
-
+header
+{
+  z-index: 101;
+}
 .tm-site-header-col {
   display: flex;
   align-items: center;
@@ -90,20 +97,65 @@ body {
   float: left;
   margin: 10px;
 }
+.tm-nav-link i::after {
+  background: #2bd2ff;
+  box-shadow: 0 0 5px #2bd2ff, 0 0 15px #2bd2ff, 0 0 30px #2bd2ff, 0 0 60px #2bd2ff;
+}
 
+.tm-nav-link  i::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 53px;
+  height: 30px;
+  width: 30px;
+  border-radius: 10px;
+  transition: 0.5s;
+  transition-delay: 0s;
+  z-index: -10;
+}
 .tm-nav-link {
+  position: relative;
   color: white;
+  box-shadow: 5px 20px 30px #0008, 5px -5px 0px #fff;
+  border-top: 1px solid #FFF2;
+  border-left: 1px solid #FFF2;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
   justify-content: center;
   width: 165px;
+  background: rgba(255, 255, 255, 0.1);
   height: 165px;
   text-align: center;
   border: 1px solid white;
   cursor: pointer;
-  position: relative;
+  overflow: hidden;
 }
 
+.tm-nav-link::before {
+  content: '';
+  position: absolute;
+  left: -100%;
+  width: 30px;
+  height: 310%;
+  background-color: #FFFB;
+  transform: rotate(38deg) translateY(-25%);
+  z-index: 1;
+}
+.tm-nav-link:hover::before {
+  animation: brightness 0.5s 1 forwards;
+}
+@keyframes brightness {
+  0% {
+      left: -59%;
+  }
+  100% {
+      left: 150%;
+  }
+}
 .tm-nav-text {
   position: absolute;
   left: 0;
@@ -121,7 +173,7 @@ body {
 }
 
 .product:hover {
-  background: #2c2a35;
+  background: rgb(0 0 0 0,5);
   color: #a9a9a9;
 }
 
@@ -184,7 +236,6 @@ body {
   flex-direction: column;
   justify-content: center;
   pointer-events: none;
-  padding: 15px;
   display: none;
 }
 
@@ -198,20 +249,22 @@ body {
 }
 
 .details__bg {
+  display: flex;
   width: 100%;
-  max-width: 900px;
+  height: 100vh;
   left: 0;
+  align-items: center;
+  justify-content: center;
   right: 0;
   margin-left: auto;
   margin-right: auto;
 }
 
 .details__bg--down {
-  background: #2c2a35;
+  background: #111;
 }
 
 .details__bg {
-  padding: 50px;
   transform-origin: 0 0;
 }
 

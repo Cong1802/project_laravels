@@ -27,6 +27,8 @@ Route::group(['prefix' => 'admin','middleware'   =>['CheckUsers']],function () {
     Route::get('/login', [AdminController::class, 'ShowViewLogin']);
     Route::get('/register', [AdminController::class, 'ShowViewRegister']);
     Route::post('/LoginAdmin', [AdminController::class, 'postLogin']);
+    Route::get('/register', [AdminController::class, 'RegisterView']);
+    Route::get('/repass', [AdminController::class, 'ForogtPassword']);
 });
 Route::group(['prefix' =>  'admin','middleware' => ['checkAdminlogin']], function(){
     Route::get('/', [AdminController::class, 'index']);

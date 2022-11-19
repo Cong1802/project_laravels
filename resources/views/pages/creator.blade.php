@@ -8,10 +8,12 @@
     <link rel="stylesheet" href={{ asset ("public/frontend/home/css/bootstrap.min.css")}}>  
     <link rel="stylesheet" href={{ asset ("public/frontend/home/css/creator.scss")}}>  
     <link rel="stylesheet" href={{ asset ("public/frontend/home/css/general.scss")}}>  
+    <link rel="stylesheet" href={{ asset ("public/frontend/home/css/clock.css")}}>  
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
     <title>Document</title>
 </head>
 <body>
+  @include("include.clock")
   @include("include.header")
   <div class="card" data-state="#about">
     <div class="card-header">

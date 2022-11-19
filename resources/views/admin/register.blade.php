@@ -16,10 +16,10 @@
 </head>
 <body class="hold-transition login-page">
 <button onclick="location.href='{{ URL::to ('/')}}'" type="button" id="backhome"><ion-icon name="arrow-back"></ion-icon></ion-icon></button>
-<div class="box"> 
+<div class="box register"> 
   <div class="form">
-    <h2>Sign in </h2>
-    <form action={{ URL::to('admin/LoginAdmin')}} method="post">
+    <h2>Register </h2>
+    <form action={{ URL::to('admin/Register')}} method="post">
       @csrf
       <div class="inputbox">
         <input type="text" name="email" autocomplete="email" required>
@@ -27,15 +27,25 @@
         <i></i>
       </div>
       <div class="inputbox">
+        <input type="text" name="email" autocomplete="email" required>
+        <span>Email </span>
+        <i></i>
+      </div>
+      <div class="inputbox">
         <input type="password" name="password" autocomplete="off" required>
         <span>Password</span>
         <i></i>
       </div>
+      <div class="inputbox">
+        <input type="password" name="password" autocomplete="off" required>
+        <span>Conform Password</span>
+        <i></i>
+      </div>
       <div class="links">
         <a href="{{ asset("admin/repass") }}"> Forgot Password</a>
-        <a href="{{ asset("admin/register") }}">Signup</a>
+        <a href="{{ asset("admin/login") }}">SingIn</a>
       </div>
-      <input type="submit" value="Login">
+      <input type="submit" value="Register">
     </form>
   </div>
 </div>
