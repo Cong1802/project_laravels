@@ -90,6 +90,7 @@ body{
   }
 
     .box::before{
+        z-index: 9;
         content: '';
         position: absolute;
         top: -50%;
@@ -102,6 +103,7 @@ body{
         animation: animate 6s linear infinite;
     }
     .box::after{
+        z-index: 9;
         content: '';
         position: absolute;
         top: -50%;
