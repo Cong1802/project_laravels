@@ -14,7 +14,17 @@
   <!-- Theme style -->
   <link rel="stylesheet" href= {{ asset ("public/admin/dist/css/login.css")}}>
 </head>
-<body class="hold-transition login-page">
+<style>
+  canvas
+  {
+    top: 0px;
+    width: 1460px;
+    height: 1118px;
+    position: absolute;
+  }
+</style>
+
+<body id="app" class="hold-transition login-page">
 <button onclick="location.href='{{ URL::to ('/')}}'" type="button" id="backhome"><ion-icon name="arrow-back"></ion-icon></ion-icon></button>
 <div class="box"> 
   <div class="form">
@@ -44,6 +54,7 @@
 <script src={{ asset ("public/admin/plugins/jquery/jquery.min.js")}}></script>
 <!-- Bootstrap 4 -->
 <script src={{ asset ("public/admin/plugins/bootstrap/js/bootstrap.bundle.min.js")}}></script>
+<script type="module" src="{{ asset("public/frontend/home/js/particle.js") }}"></script>
 <!-- AdminLTE App -->
 <script src={{ asset ("public/admin/dist/js/adminlte.min.js")}}></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

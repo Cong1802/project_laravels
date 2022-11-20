@@ -18,4 +18,8 @@ class HomeController extends Controller
     {
         return view('pages.FormContact');
     }
+    public function test()
+    {
+        return view('test');
+    }
 }

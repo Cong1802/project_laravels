@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
     <title>Document</title>
 </head>
-<body>
+<body id="app">
   @include("include.clock")
   @include("include.header")
   <div class="card" data-state="#about">
@@ -95,6 +95,7 @@
 </body>
 <script src={{ asset ("public/frontend/home/js/jquery-3.2.1.slim.min.js")}}></script>   
 <script src={{ asset ("public/frontend/home/js/anime.min.js")}}></script>
+<script type="module" src="{{ asset("public/frontend/home/js/particle.js") }}"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src={{ asset ("public/frontend/home/js/main.js")}}></script>   

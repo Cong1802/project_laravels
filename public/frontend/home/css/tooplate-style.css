@@ -5,6 +5,40 @@ Template 2097 Pop
 https://www.tooplate.com/view/2097-pop
 
 */
+* {
+  box-sizing: border-box;
+}
+:root {
+  --background-color: black;
+  --text-color: hsl(0, 0%, 100%);
+}
+body {
+  margin: 0;
+}
+.wrapper {
+  display: grid;
+  font-family: "Oswald", sans-serif;
+  font-size: 45px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+.wrapper > div {
+  grid-area: 1/1/-1/-1;
+}
+.top {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 0% 58%);
+}
+.bottom {
+  clip-path: polygon(0% 60%, 100% 50%, 100% 100%, 0% 100%);
+  color: transparent;
+  background: -webkit-linear-gradient(177deg, black 53%, var(--text-color) 65%);
+  background: linear-gradient(177deg, black 53%, var(--text-color) 65%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  transform: translateX(-0.02em);
+}
 
 body {
   position: relative;
@@ -28,7 +62,7 @@ h1 {
 body {
   color: #2b2c48;
   font-family: "Jost", sans-serif;
-  background-image: url(https://images.unsplash.com/photo-1566738780863-f9608f88f3a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2378&q=80);
+  background-image: url(https://i.postimg.cc/Z0ktfskN/peter-broomfield-m3m-ln-R90u-M-unsplash.jpg);
 
   background-repeat: no-repeat;
   background-size: cover;
@@ -84,7 +118,9 @@ header
   text-align: right;
   width: 100%;
 }
-
+.tm-site-header p {
+  color: #fff;
+}
 .tm-nav ul {
   padding-left: 0;
   display: block;
@@ -127,7 +163,7 @@ header
   border-top: 1px solid rgba(255, 255, 255, 0.25);
   justify-content: center;
   width: 165px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.2);
   height: 165px;
   text-align: center;
   border: 1px solid white;

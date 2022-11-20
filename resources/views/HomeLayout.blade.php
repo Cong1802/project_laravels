@@ -20,7 +20,8 @@ https://www.tooplate.com/view/2097-pop
     <link rel="stylesheet" type="text/css" href={{ asset ("public/frontend/home/slick/slick.css")}}/>                       <!-- http://kenwheeler.github.io/slick/ -->
     <link rel="stylesheet" type="text/css" href={{ asset ("public/frontend/home/slick/slick-theme.css")}}/>
     <link rel="stylesheet" href={{ asset ("public/frontend/home/css/tooplate-style.css")}}>  
-    <link rel="stylesheet" href={{ asset ("public/frontend/home/css/general.scss")}}>        
+    <link rel="stylesheet" href={{ asset ("public/frontend/home/css/general.scss")}}>     
+    <link rel="stylesheet" href={{ asset ("public/frontend/home/css/keyboard.css")}}>        
     <link rel="stylesheet" href={{ asset ("public/frontend/home/css/clock.css")}}>         
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>                        <!-- Templatemo style -->
 </head>
@@ -40,18 +41,22 @@ https://www.tooplate.com/view/2097-pop
     transparent, #0006);
 }
   </style>
-<body>
+<body id="app">
     @include("include.header")
     @include("include.clock")
+    @include("include.keyboard")
     <div id="tm-wrap">
         <div class="tm-main-content ">
             <div class="container tm-site-header-container">
                 <div class="row">
                     <div class="col-sm-12 col-md-6 col-lg-6 col-md-col-xl-6 mb-md-0 mb-sm-4 mb-4 tm-site-header-col">
                         <div class="tm-site-header">
-                            <h1 class="mb-4 text-white">My profile</h1>
+                            <section class="wrapper">
+                                <div class="top">My Profile</div>
+                                <div class="bottom" aria-hidden="true">My Profile</div>
+                            </section>
                             <img src={{ asset ("public/frontend/home/img/underline.png")}} class="img-fluid mb-4">
-                            <p>New HTML Template with pop up pages and use this layout for your website</p>        
+                            <p>Go to reach your dream</p>        
                         </div>                        
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
@@ -71,10 +76,6 @@ https://www.tooplate.com/view/2097-pop
                                                     <div class="swiper-slide" style="background-image:url(https://i.postimg.cc/MTTSXjbn/brandon-atchison-e-BJWhlq-WR54-unsplash.jpg)"></div>
                                                     <div class="swiper-slide" style="background-image:url(https://i.postimg.cc/8cfgmQYD/campbell-3-ZUs-NJhi-Ik-unsplash.jpg)"></div>
                                                     <div class="swiper-slide" style="background-image:url(https://i.postimg.cc/8Ck5BcmS/evgeny-tchebotarev-aiwu-Lj-LPFn-U-unsplash.jpg)"></div>
-                                                    <div class="swiper-slide" style="background-image:url(https://i.postimg.cc/66F8J9tr/hakon-sataoen-qyfco1nf-Mtg-unsplash.jpg)"></div>
-                                                    <div class="swiper-slide" style="background-image:url(https://i.postimg.cc/ydbzRYvv/joey-banks-YApi-Wyp0lqo-unsplash.jpg)"></div>
-                                                    <div class="swiper-slide" style="background-image:url(https://i.postimg.cc/NGKKzyqG/joshua-koblin-eq-W1-MPin-EV4-unsplash.jpg)"></div>
-                                                    <div class="swiper-slide" style="background-image:url(https://i.postimg.cc/JhK81QJw/marcus-p-o-UBjd22g-F6w-unsplash.jpg)"></div>
                                                 </div>
                                                 <div class="swiper-pagination"></div>
                                             </div>   
@@ -208,9 +209,8 @@ https://www.tooplate.com/view/2097-pop
     <script src={{ asset ("public/frontend/home/js/main.js")}}></script>   
     <script src="https://kit.fontawesome.com/95a02bd20d.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script>
+    <script type="module" src="{{ asset("public/frontend/home/js/particle.js") }}"></script>
 
-</script>
     <script>      
         function setupFooter() {
             var pageHeight = $('.tm-site-header-container').height() + $('footer').height() + 100;

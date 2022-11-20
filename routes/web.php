@@ -22,6 +22,8 @@ use App\Http\Controllers\SkillController;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/creator', [HomeController::class, 'creator']);
 Route::get('/Contact', [HomeController::class, 'Contact']);
+Route::get('/test', [HomeController::class, 'test']);
+
 
 Route::group(['prefix' => 'admin','middleware'   =>['CheckUsers']],function () {
     Route::get('/login', [AdminController::class, 'ShowViewLogin']);
