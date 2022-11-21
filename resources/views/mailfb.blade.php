@@ -7,8 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    {{$name}}
-    {{$email}}
-    {{$content}}
+12334
 </body>
 </html>

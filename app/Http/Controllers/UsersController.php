@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Mail\MyTestMail;
 use App\Http\Requests\LoginUsersRequest;
 use App\User;
 use Mail;
@@ -40,12 +41,12 @@ class UsersController extends Controller
             'password' => $request->password,
         ];
         $content = 'hello';
-        Mail::send('mailfb', array('name'=>$data["username"],'email'=>$data["email"], 'content'=>$content), function($message) use ($data){
-	        $message->to($message->from(env('MAIL_USERNAME')), 'Visitor')->subject('Visitor Feedback!');
+        Mail::send('mailfb', compact('content'), function($message){
+	        $message->to('conguyen6262@gmail.com', 'Visitor');
 	    });
-        Session::flash('flash_message', 'Send message successfully!');
+        // Session::flash('flash_message', 'Send message successfully!');
 
-        return view('form');
+        return view('pages.LoginView');
     }
 
     public function postLogin(LoginUsersRequest $request)

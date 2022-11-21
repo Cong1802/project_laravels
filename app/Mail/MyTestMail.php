@@ -11,10 +11,14 @@ class MyTestMail extends Mailable
 {
     use Queueable, SerializesModels;
  
+    public function __construct($email)
+    {
+        $this->email = $email;
+    }
     public function build()
     {
         return $this
-            ->from('phambinh217@gmail.com')
-            ->view('mails.test');
+            ->subject('Thank you for subscribing to our newsletter')
+            ->markdown('mailfb');
     }
 }
