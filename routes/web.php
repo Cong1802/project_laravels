@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ProfileController;
@@ -25,17 +25,18 @@ Route::get('/Contact', [HomeController::class, 'Contact']);
 Route::get('/test', [HomeController::class, 'test']);
 
 
-Route::group(['prefix' => 'admin','middleware'   =>['CheckUsers']],function () {
-    Route::get('/login', [AdminController::class, 'ShowViewLogin']);
-    Route::get('/register', [AdminController::class, 'ShowViewRegister']);
-    Route::post('/LoginAdmin', [AdminController::class, 'postLogin']);
-    Route::get('/register', [AdminController::class, 'RegisterView']);
-    Route::get('/repass', [AdminController::class, 'ForogtPassword']);
+Route::group(['middleware'   =>['CheckUsers']],function () {
+    Route::get('/login', [UsersController::class, 'ShowViewLogin']);
+    Route::get('/register', [UsersController::class, 'ShowViewRegister']);
+    Route::post('/LoginUser', [UsersController::class, 'postLogin']);
+    Route::get('/register', [UsersController::class, 'RegisterView']);
+    Route::post('/RegisterAccount', [UsersController::class, 'RegisterAccount']);
+    Route::get('/repass', [UsersController::class, 'ForogtPassword']);
 });
-Route::group(['prefix' =>  'admin','middleware' => ['checkAdminlogin']], function(){
-    Route::get('/', [AdminController::class, 'index']);
-    Route::get('/setting', [AdminController::class, 'Setting']);
-    Route::post('/postSetting', [AdminController::class, 'postSetting']);
+Route::group(['middleware' => ['checkAdminlogin']], function(){
+    Route::get('/dashboard', [UsersController::class, 'index']);
+    Route::get('/setting', [UsersController::class, 'Setting']);
+    Route::post('/postSetting', [UsersController::class, 'postSetting']);
 
     Route::get('/education', [EducationController::class, 'index']);
     Route::post('/deleteBoxEducation', [EducationController::class, 'deleteBoxEducation']);
@@ -54,7 +55,7 @@ Route::group(['prefix' =>  'admin','middleware' => ['checkAdminlogin']], functio
     Route::get('/customer', [AccountController::class, 'ShowViewCustomer']);
     Route::get('/manager', [AccountController::class, 'ShowViewManager']);
     Route::post('/delete_user', [AccountController::class, 'DeleteUser']);
-    Route::get('/logout', [AdminController::class, 'LogoutAdmin']);
+    Route::get('/logout', [UsersController::class, 'LogoutAdmin']);
     Route::get('/addUser', [AccountController::class, 'AddUser']);
     Route::post('/ajaxCity', [AccountController::class, 'ajaxCity']);
     Route::post('/insertUser', [AccountController::class, 'InsertUser']);

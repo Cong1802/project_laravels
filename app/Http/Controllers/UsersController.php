@@ -4,41 +4,60 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\LoginAdminRequest;
+use App\Http\Requests\LoginUsersRequest;
 use App\User;
+use Mail;
 use DB;
+use Illuminate\Support\Env;
 
-class AdminController extends Controller
+class UsersController extends Controller
 {
+    /**
+     * @param LoginUsersRequest $request
+     * @return RedirectResponse
+     */
     public function index()
     {
-        return view('admin.dashboard');
+        return view('pages.dashboard');
     }
     public function ShowViewLogin()
     {
-        return view('admin.LoginView');
+        return view('pages.LoginView');
     }
     public function ForogtPassword()
     {
-        return view('admin.forgotPass');
+        return view('pages.forgotPass');
     }
     public function RegisterView()
     {
-        return view('admin.Register');
+        return view('pages.Register');
     }
-    /**
-     * @param LoginAdminRequest $request
-     * @return RedirectResponse
-     */
-    public function postLogin(LoginAdminRequest $request)
+    public function RegisterAccount(Request $request)
     {
+        $data = [
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' => $request->password,
+        ];
+        $content = 'hello';
+        Mail::send('mailfb', array('name'=>$data["username"],'email'=>$data["email"], 'content'=>$content), function($message) use ($data){
+	        $message->to($message->from(env('MAIL_USERNAME')), 'Visitor')->subject('Visitor Feedback!');
+	    });
+        Session::flash('flash_message', 'Send message successfully!');
+
+        return view('form');
+    }
+
+    public function postLogin(LoginUsersRequest $request)
+    {
+        // echo 2;die;
         $login = [
             'email' => $request->email,
             'password' => bcrypt($request->password),
         ];
         $val = $request->only(['email', 'password']);
         if (Auth::attempt($val)) {
-            return redirect('admin');
+            return redirect('dashboard');
         } else {
             return redirect()->back()->with('status', 'Email hoặc Password không chính xác');
         }
@@ -46,12 +65,12 @@ class AdminController extends Controller
     public function LogoutAdmin()
     {
         Auth::logout();
-        return redirect('/admin/login');
+        return redirect('login');
     }
     public function Setting()
     {
         $data = DB::table('tbl_setting')->get();
-        return view('/admin/setting',['data' => $data]);
+        return view('pages.setting',['data' => $data]);
     }
     public function postSetting(Request $request)
     {
@@ -105,6 +124,6 @@ class AdminController extends Controller
         {
             $update_Setting = DB::table('tbl_setting')->where('id',1)->update($data);
         }
-        return redirect('admin/setting');
+        return redirect('setting');
     }
 }

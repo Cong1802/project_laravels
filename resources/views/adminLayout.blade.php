@@ -8,55 +8,55 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href={{ asset ("public/admin/plugins/fontawesome-free/css/all.min.css")}}>
+  <link rel="stylesheet" href={{ asset ("public/users/plugins/fontawesome-free/css/all.min.css")}}>
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href= {{ asset("public/admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css")}}>
+  <link rel="stylesheet" href= {{ asset("public/users/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css")}}>
   <!-- iCheck -->
-  <link rel="stylesheet" href= {{ asset("public/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css")}}>
+  <link rel="stylesheet" href= {{ asset("public/users/plugins/icheck-bootstrap/icheck-bootstrap.min.css")}}>
   <!-- JQVMap -->
-  <link rel="stylesheet" href= {{ asset("public/admin/plugins/jqvmap/jqvmap.min.css")}}>
+  <link rel="stylesheet" href= {{ asset("public/users/plugins/jqvmap/jqvmap.min.css")}}>
   <!-- Theme style -->
-  <link rel="stylesheet" href= {{ asset("public/admin/dist/css/adminlte.min.css")}}>
+  <link rel="stylesheet" href= {{ asset("public/users/dist/css/adminlte.min.css")}}>
 
-  <link rel="stylesheet" href= {{ asset("public/admin/dist/css/skill.scss")}}>
+  <link rel="stylesheet" href= {{ asset("public/users/dist/css/skill.scss")}}>
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href= {{ asset("public/admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css")}}>
+  <link rel="stylesheet" href= {{ asset("public/users/plugins/overlayScrollbars/css/OverlayScrollbars.min.css")}}>
   <!-- Daterange picker -->
-  <link rel="stylesheet" href= {{ asset("public/admin/plugins/daterangepicker/daterangepicker.css")}}>
+  <link rel="stylesheet" href= {{ asset("public/users/plugins/daterangepicker/daterangepicker.css")}}>
   <!-- summernote -->
-  <link rel="stylesheet" href= {{ asset("public/admin/plugins/summernote/summernote-bs4.min.css")}}>
+  <link rel="stylesheet" href= {{ asset("public/users/plugins/summernote/summernote-bs4.min.css")}}>
   <!-- jsGrid -->
-  <link rel="stylesheet" href={{ asset("public/admin/plugins/jsgrid/jsgrid.min.css")}}>
-  <link rel="stylesheet" href={{ asset("public/admin/plugins/jsgrid/jsgrid-theme.min.css")}}>
-  <link rel="stylesheet" href={{ asset("public/admin/plugins/daterangepicker/daterangepicker.css")}}>
+  <link rel="stylesheet" href={{ asset("public/users/plugins/jsgrid/jsgrid.min.css")}}>
+  <link rel="stylesheet" href={{ asset("public/users/plugins/jsgrid/jsgrid-theme.min.css")}}>
+  <link rel="stylesheet" href={{ asset("public/users/plugins/daterangepicker/daterangepicker.css")}}>
   <!-- iCheck for checkboxes and radio inputs -->
-  <link rel="stylesheet" href={{ asset("public/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css")}}>
+  <link rel="stylesheet" href={{ asset("public/users/plugins/icheck-bootstrap/icheck-bootstrap.min.css")}}>
   <!-- Bootstrap Color Picker -->
-  <link rel="stylesheet" href={{ asset("public/admin/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css")}}>
+  <link rel="stylesheet" href={{ asset("public/users/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css")}}>
   <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href={{ asset("public/admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css")}}>
+  <link rel="stylesheet" href={{ asset("public/users/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css")}}>
   <!-- Select2 -->
-  <link rel="stylesheet" href={{ asset("public/admin/plugins/select2/css/select2.min.css")}}>
-  <link rel="stylesheet" href={{ asset("public/admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css")}}>
+  <link rel="stylesheet" href={{ asset("public/users/plugins/select2/css/select2.min.css")}}>
+  <link rel="stylesheet" href={{ asset("public/users/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css")}}>
   <!-- Bootstrap4 Duallistbox -->
-  <link rel="stylesheet" href={{ asset("public/admin/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css")}}>
+  <link rel="stylesheet" href={{ asset("public/users/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css")}}>
   <!-- BS Stepper -->
-  <link rel="stylesheet" href={{ asset("public/admin/plugins/bs-stepper/css/bs-stepper.min.css")}}>
+  <link rel="stylesheet" href={{ asset("public/users/plugins/bs-stepper/css/bs-stepper.min.css")}}>
   <!-- dropzonejs -->
-  <link rel="stylesheet" href={{ asset("public/admin/plugins/dropzone/min/dropzone.min.css")}}>
+  <link rel="stylesheet" href={{ asset("public/users/plugins/dropzone/min/dropzone.min.css")}}>
 
-  <link rel="stylesheet" href={{ asset("public/admin/plugins/ion-rangeslider/css/ion.rangeSlider.min.css")}}>
+  <link rel="stylesheet" href={{ asset("public/users/plugins/ion-rangeslider/css/ion.rangeSlider.min.css")}}>
   <!-- bootstrap slider -->
-  <link rel="stylesheet" href={{ asset("public/admin/plugins/bootstrap-slider/css/bootstrap-slider.min.css")}}>
+  <link rel="stylesheet" href={{ asset("public/users/plugins/bootstrap-slider/css/bootstrap-slider.min.css")}}>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src= {{ asset("public/admin/dist/img/AdminLTELogo.png")}} alt="AdminLTELogo" height="60" width="60">
+    <img class="animation__shake" src= {{ asset("public/users/dist/img/AdminLTELogo.png")}} alt="AdminLTELogo" height="60" width="60">
   </div>
 
   <!-- Navbar -->
@@ -108,7 +108,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src= {{ asset("public/admin/dist/img/user1-128x128.jpg")}} alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <img src= {{ asset("public/users/dist/img/user1-128x128.jpg")}} alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Brad Diesel
@@ -124,7 +124,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src= {{ asset("public/admin/dist/img/user8-128x128.jpg")}} alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src= {{ asset("public/users/dist/img/user8-128x128.jpg")}} alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   John Pierce
@@ -140,7 +140,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src= {{ asset("public/admin/dist/img/user3-128x128.jpg")}} alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src= {{ asset("public/users/dist/img/user3-128x128.jpg")}} alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Nora Silvester
@@ -201,7 +201,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src= {{ asset("public/admin/dist/img/AdminLTELogo.png")}} alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src= {{ asset("public/users/dist/img/AdminLTELogo.png")}} alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
 
@@ -210,7 +210,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src= {{ asset("public/admin/dist/img/user2-160x160.jpg")}} class="img-circle elevation-2" alt="User Image">
+          <img src= {{ asset("public/users/dist/img/user2-160x160.jpg")}} class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">{{ Auth::user()->name }}</a>
@@ -435,7 +435,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ URL::to('admin/skill') }}" class="nav-link">
+            <a href="{{ URL::to('skill') }}" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Skill
@@ -452,7 +452,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href={{ URL::to('admin/profile/activity') }} class="nav-link">
+            <a href={{ URL::to('profile/activity') }} class="nav-link">
               <i class="nav-icon fas fa-columns"></i>
               <p>
                 Profile
@@ -468,7 +468,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href={{ URL::to('admin/education') }} class="nav-link">
+            <a href={{ URL::to('education') }} class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Education
@@ -476,16 +476,16 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href={{ URL::to("admin/setting")}} class="nav-link">
-              <img style="height:24px;with:24px" class="mr-2" src={{ asset('public/admin/dist/img/setting.png')}}>
+            <a href={{ URL::to("setting")}} class="nav-link">
+              <img style="height:24px;with:24px" class="mr-2" src={{ asset('public/users/dist/img/setting.png')}}>
               <p>
                 Setting
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href={{ url('admin/logout') }} class="nav-link">
-              <img style="height:24px;with:24px" class="mr-2" src={{ asset('public/admin/dist/img/logout.png')}}>
+            <a href={{ url('logout') }} class="nav-link">
+              <img style="height:24px;with:24px" class="mr-2" src={{ asset('public/users/dist/img/logout.png')}}>
               <p>Logout</p>
             </a>
           </li>
@@ -516,46 +516,46 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src= {{ asset ("public/admin/plugins/jquery/jquery.min.js")}}></script>
+<script src= {{ asset ("public/users/plugins/jquery/jquery.min.js")}}></script>
 <!-- jQuery UI 1.11.4 -->
-<script src= {{ asset ("public/admin/plugins/jquery-ui/jquery-ui.min.js")}}></script>
+<script src= {{ asset ("public/users/plugins/jquery-ui/jquery-ui.min.js")}}></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
-<script src= {{ asset ("public/admin/plugins/bootstrap/js/bootstrap.bundle.min.js")}}></script>
+<script src= {{ asset ("public/users/plugins/bootstrap/js/bootstrap.bundle.min.js")}}></script>
 <!-- ChartJS -->
-<script src= {{ asset ("public/admin/plugins/chart.js/Chart.min.js")}}></script>
+<script src= {{ asset ("public/users/plugins/chart.js/Chart.min.js")}}></script>
 <!-- Sparkline -->
-<script src= {{ asset ("public/admin/plugins/sparklines/sparkline.js")}}></script>
+<script src= {{ asset ("public/users/plugins/sparklines/sparkline.js")}}></script>
 <!-- JQVMap -->
-<script src= {{ asset ("public/admin/plugins/jqvmap/jquery.vmap.min.js")}}></script>
-<script src= {{ asset ("public/admin/plugins/jqvmap/maps/jquery.vmap.usa.js")}}></script>
+<script src= {{ asset ("public/users/plugins/jqvmap/jquery.vmap.min.js")}}></script>
+<script src= {{ asset ("public/users/plugins/jqvmap/maps/jquery.vmap.usa.js")}}></script>
 <!-- jQuery Knob Chart -->
-<script src= {{ asset ("public/admin/plugins/jquery-knob/jquery.knob.min.js")}}></script>
+<script src= {{ asset ("public/users/plugins/jquery-knob/jquery.knob.min.js")}}></script>
 <!-- daterangepicker -->
-<script src= {{ asset ("public/admin/plugins/moment/moment.min.js")}}></script>
-<script src= {{ asset ("public/admin/plugins/daterangepicker/daterangepicker.js")}}></script>
+<script src= {{ asset ("public/users/plugins/moment/moment.min.js")}}></script>
+<script src= {{ asset ("public/users/plugins/daterangepicker/daterangepicker.js")}}></script>
 <!-- Tempusdominus Bootstrap 4 -->
-<script src= {{ asset ("public/admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js")}}></script>
+<script src= {{ asset ("public/users/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js")}}></script>
 <!-- Summernote -->
-<script src= {{ asset ("public/admin/plugins/summernote/summernote-bs4.min.js")}}></script>
+<script src= {{ asset ("public/users/plugins/summernote/summernote-bs4.min.js")}}></script>
 <!-- overlayScrollbars -->
-<script src= {{ asset ("public/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js")}}></script>
+<script src= {{ asset ("public/users/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js")}}></script>
 <!-- AdminLTE App -->
-<script src={{ asset ("public/admin/dist/js/adminlte.js")}}></script>
+<script src={{ asset ("public/users/dist/js/adminlte.js")}}></script>
 <!-- AdminLTE for demo purposes -->
-<script src={{ asset ("public/admin/dist/js/demo.js")}}></script>
+<script src={{ asset ("public/users/dist/js/demo.js")}}></script>
 <!--sweetalert -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- jsGrid -->
-<script src={{ asset ("public/admin/plugins/jsgrid/demos/db.js")}}></script>
-<script src={{ asset ("public/admin/plugins/jsgrid/jsgrid.min.js")}}></script>
+<script src={{ asset ("public/users/plugins/jsgrid/demos/db.js")}}></script>
+<script src={{ asset ("public/users/plugins/jsgrid/jsgrid.min.js")}}></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src={{ asset ("public/admin/dist/js/pages/dashboard.js")}}></script>
+<script src={{ asset ("public/users/dist/js/pages/dashboard.js")}}></script>
 
-<script src={{ asset ("public/admin/ckeditor/ckeditor.js")}}></script>
+<script src={{ asset ("public/users/ckeditor/ckeditor.js")}}></script>
 <script>    
   $(function () {
     $("#jsGrid1").jsGrid({
@@ -594,7 +594,7 @@
     var id = $(this).attr('data-id');
     $.ajax({
       
-      url:"{{ URL::to('admin/delete_user') }}",
+      url:"{{ URL::to('delete_user') }}",
       data:{
         id:id
       },
@@ -617,7 +617,7 @@
   $('#city').change(function(){
     var cit_id = $(this).val();
     $.ajax({
-        url:'{{ URL::to('admin/ajaxCity') }}',
+        url:'{{ URL::to('ajaxCity') }}',
         data:{
             cit_id:cit_id,
         },

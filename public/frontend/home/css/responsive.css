@@ -1,0 +1,54 @@
+/* // respon */
+@media screen and (max-width: 767px){
+	.page_icon {
+		bottom: 80px;
+	}
+    .clock
+    {
+        display:none
+    }
+    .main-contact
+    {
+        margin-top:20px !important;
+    }
+    .contact-section h2
+    {
+        font-size: 18px;
+    }
+    .form-item:last-child {
+        margin-bottom: 0 !important;
+    }
+    #apple, #twitter, #github, #facebook {
+        margin: 15px 15px;
+    }
+    .circles {
+        width: 90px;
+        height: 90px;
+    }
+    .containers 
+    {
+        display: grid !important;
+        grid-template-columns:1fr 1fr 1fr;
+        grid-gap: 10px;
+        width: 100% !important;
+    }
+    .containers .btn {
+        height: 50px;
+        margin: 0px !important;
+        position: relative;
+        width: 100% !important;
+    }
+    .containers .btn ion-icon {
+        font-size:25px;
+        vertical-align: sub;
+    }
+    .containers .btn a {
+        border-radius: 15px;
+    }
+}
+@media screen and (max-width: 480px){
+    .contact-form
+    {
+        width: 100% !important
+    }
+}

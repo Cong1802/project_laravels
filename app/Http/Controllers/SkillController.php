@@ -14,11 +14,11 @@ class SkillController extends Controller
         if($count > 0)
         {
             $data = DB::table('tbl_skill')->where('user_id',$userId)->get();
-            return view('admin.Skill',['data'=>$data,'count'=>$count]);
+            return view('pages.Skill',['data'=>$data,'count'=>$count]);
         }
         else
         {
-            return view('admin.Skill',['count'=>$count]);
+            return view('pages.Skill',['count'=>$count]);
         }
     }
     public function deleteSkill(Request  $request)

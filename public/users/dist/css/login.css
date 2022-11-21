@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'poppins',sans-serif;
+    overflow: hidden
 }
 body{
     position: relative;
@@ -15,12 +16,13 @@ body{
     }
     .box{
       margin: 0 auto;
-        position: relative;
-        width: 380px;
-        height: 420px;
-        background: #1c1c1c;
-        border-radius: 8px;
-        overflow: hidden;
+      height: 510px;
+      position: relative;
+      width: 380px;
+      min-height: 420px;
+      background: #1c1c1c;
+      border-radius: 8px;
+      overflow: hidden;
     }
     .box.register
     {
@@ -28,7 +30,7 @@ body{
     }
     .box.repass
     {
-      height:300px;
+      height:330px;
     }
     .repass .links a {
       color: #45f3ff;
@@ -126,11 +128,11 @@ body{
     }
 
     .form{
-        position:absolute;
-        inset: 2px;
-        border-radius: 8px;
-        background: #28292d;
-        z-index: 10;
+    position:absolute;
+    inset: 2px;
+    border-radius: 8px;
+    background: #28292d;
+    z-index: 10;
 		padding:50px 40px;
 		display: flex;
 		flex-direction: column;
@@ -210,7 +212,6 @@ input[type="submit"]
 	outline: none;
 	background: #45f3ff;
 	padding: 11px 25px;
-	width: 100px;
 	margin-top: 10px;
 	border-radius: 4px;
 	font-weight: 600;

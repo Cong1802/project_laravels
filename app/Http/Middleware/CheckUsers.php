@@ -18,7 +18,7 @@ class CheckUsers
     {
         if(Auth::check())
         {
-            return redirect()->intended('admin');
+            return redirect()->intended('dashboard');
         }
         return $next($request);
     }

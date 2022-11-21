@@ -1,5 +1,5 @@
 <!-- conntact -->
-<div class="icon_contact">
+<div class="icon_contact d-none d-md-block">
     <div class="d-flex justify-content-end">
         <i class="fa d-flex justify-content-center fa-apple" id="apple"></i>
     </div>

@@ -13,11 +13,11 @@ class EducationController extends Controller
         if($count > 0)
         {
             $data = DB::table('tbl_education')->where('user_id',$userId)->get();
-            return view('admin.education',['data'=>$data,'count'=>$count]);
+            return view('pages.education',['data'=>$data,'count'=>$count]);
         }
         else
         {
-            return view('admin.education',['count'=>$count]);
+            return view('pages.education',['count'=>$count]);
         }
         
     }
@@ -64,6 +64,6 @@ class EducationController extends Controller
                 $insert_education = DB::table('tbl_education')->where('id',$education_id[$key])->update($data);
             }
         }
-        return redirect('admin/education');
+        return redirect('pages/education');
     }
 }

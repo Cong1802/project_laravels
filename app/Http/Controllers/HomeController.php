@@ -8,15 +8,15 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('HomeLayout');
+        return view('home.HomePage');
     }
     public function creator()
     {
-        return view('pages.creator');
+        return view('home.creator');
     }
     public function Contact()
     {
-        return view('pages.FormContact');
+        return view('home.FormContact');
     }
     public function test()
     {

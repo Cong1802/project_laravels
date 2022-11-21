@@ -19,21 +19,21 @@ class ProfileController extends Controller
             {
                 if($education)
                 {
-                    return view('admin.Profile.activity',["data" => $data,"skill" => $skill,"education" => $education]);
+                    return view('pages.Profile.activity',["data" => $data,"skill" => $skill,"education" => $education]);
                 }
                 else
                 {
-                    return view('admin.Profile.activity',["data" => $data,"skill" => $skill]);
+                    return view('pages.Profile.activity',["data" => $data,"skill" => $skill]);
                 }
             }
             else
             {
-                return view('admin.Profile.activity',["data" => $data]);
+                return view('pages.Profile.activity',["data" => $data]);
             }
         }
         else
         {
-            return view('admin.Profile.activity');
+            return view('pages.Profile.activity');
         }
     }
     public function timeline()
@@ -50,26 +50,26 @@ class ProfileController extends Controller
                 {
                     if($education)
                     {
-                        return view('admin.Profile.timeline',["data" => $data,"skill" => $skill,"education" => $education]);
+                        return view('pages.Profile.timeline',["data" => $data,"skill" => $skill,"education" => $education]);
                     }
                     else
                     {
-                        return view('admin.Profile.timeline',["data" => $data,"skill" => $skill]);
+                        return view('pages.Profile.timeline',["data" => $data,"skill" => $skill]);
                     }
                 }
                 else
                 {
-                    return view('admin.Profile.timeline',["data" => $data]);
+                    return view('pages.Profile.timeline',["data" => $data]);
                 }
             }
             else
             {
-                return view('admin.Profile.timeline',["data" => $data]);
+                return view('pages.Profile.timeline',["data" => $data]);
             }
         }
         else
         {
-        return view('admin.Profile.timeline');
+        return view('pages.Profile.timeline');
         }
     }
     public function setting()
@@ -84,21 +84,21 @@ class ProfileController extends Controller
             {
                 if($education)
                 {
-                    return view('admin.Profile.setting',["data" => $data,"skill" => $skill,"education" => $education]);
+                    return view('pages.Profile.setting',["data" => $data,"skill" => $skill,"education" => $education]);
                 }
                 else
                 {
-                    return view('admin.Profile.setting',["data" => $data,"skill" => $skill]);
+                    return view('pages.Profile.setting',["data" => $data,"skill" => $skill]);
                 }
             }
             else
             {
-                return view('admin.Profile.setting',["data" => $data]);
+                return view('pages.Profile.setting',["data" => $data]);
             }
         }
         else
         {
-        return view('admin.Profile.setting');
+        return view('pages.Profile.setting');
         }
     }
     public function UpdateAVT(Request $request)

@@ -30,9 +30,9 @@
             <div class="card">
               <div class="card-header p-2">
                 <ul class="nav nav-pills">
-                  <li><a class="nav-link" href="{{ URL::to('admin/profile/activity') }}">Activity</a></li>
-                  <li><a class="nav-link" href="{{ URL::to('admin/profile/timeline') }}">Timeline</a></li>
-                  <li><a class="nav-link" href="{{ URL::to('admin/profile/setting') }}">Settings</a></li>
+                  <li><a class="nav-link" href="{{ URL::to('profile/activity') }}">Activity</a></li>
+                  <li><a class="nav-link" href="{{ URL::to('profile/timeline') }}">Timeline</a></li>
+                  <li><a class="nav-link" href="{{ URL::to('profile/setting') }}">Settings</a></li>
                 </ul>
               </div><!-- /.card-header -->
               <div class="card-body">
