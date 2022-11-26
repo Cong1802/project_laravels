@@ -7,34 +7,16 @@ use Auth;
 use DB;
 class ProfileController extends Controller
 {
-    public function activity()
+    public function ProfileSetting()
     {
         $userId = Auth::id();
-        $data = DB::table('tbl_profile')->where('user_id',$userId)->first();
-        $skill = DB::table('tbl_skill')->where('user_id',$userId)->get();
-        $education = DB::table('tbl_education')->where('user_id',$userId)->get();
-        if($data)
-        {
-            if($skill)
-            {
-                if($education)
-                {
-                    return view('pages.Profile.activity',["data" => $data,"skill" => $skill,"education" => $education]);
-                }
-                else
-                {
-                    return view('pages.Profile.activity',["data" => $data,"skill" => $skill]);
-                }
-            }
-            else
-            {
-                return view('pages.Profile.activity',["data" => $data]);
-            }
-        }
-        else
-        {
-            return view('pages.Profile.activity');
-        }
+        $count_skill = DB::table('tbl_skill')->where('user_id',$userId)->count();
+        $data_skill = DB::table('tbl_skill')->where('user_id',$userId)->get();
+
+        $count_education = DB::table('tbl_education')->where('user_id',$userId)->count();
+        $data_education = DB::table('tbl_education')->where('user_id',$userId)->get();
+        
+        return view('pages.profile',['data_skill'=>$data_skill,'data_education'=>$data_education,'count_skill'=>$count_skill,'count_education'=>$count_education]);
     }
     public function timeline()
     {

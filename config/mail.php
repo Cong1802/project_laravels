@@ -39,8 +39,8 @@ return [
             'host' => 'smtp.gmail.com',
             'port' => 587,
             'encryption' => 'tls',
-            'username' => 'conguyen6262@gmail.com',
-            'password' => 'jrkqztmgsocjywwl',
+            'username' => 'myprofilebeta@gmail.com',
+            'password' => 'bmzvpanxcvhcjbsx',
             'timeout' => null,
             'auth_mode' => null,
         ],
@@ -93,7 +93,7 @@ return [
 
     'from' => [
         'address' => 'conguyen6262@gmail.com',
-        'name' => 'Example',
+        'name' => 'My Profile',
     ],
 
     /*

@@ -3,7 +3,7 @@
 <div class="box repass"> 
   <div class="form">
     <h2>Forgot Password</h2>
-    <form action={{ URL::to('LoginUser')}} method="post">
+    <form action={{ URL::to('ForogtPassPost')}} method="post">
       @csrf
       <div class="inputbox">
         <input type="text" name="email" autocomplete="email" required>
@@ -17,5 +17,12 @@
       <input type="submit" value="Forgot Password">
     </form>
   </div>
+</div>
+<div>
+  @if (session('notify'))
+    <div class="alert alert-danger">
+        <div> - {{ session('notify') }}</div>
+    </div>
+  @endif
 </div>
 @endsection

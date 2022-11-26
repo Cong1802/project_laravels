@@ -6,21 +6,6 @@ use Illuminate\Http\Request;
 use Auth;
 class EducationController extends Controller
 {
-    public  function index()
-    {
-        $userId = Auth::id();
-        $count = DB::table('tbl_education')->where('user_id',$userId)->count();
-        if($count > 0)
-        {
-            $data = DB::table('tbl_education')->where('user_id',$userId)->get();
-            return view('pages.education',['data'=>$data,'count'=>$count]);
-        }
-        else
-        {
-            return view('pages.education',['count'=>$count]);
-        }
-        
-    }
     public function deleteBoxEducation(Request  $request)
     {
         $id_education = $request->id_education;
@@ -46,6 +31,7 @@ class EducationController extends Controller
         $time = $request->input('time');
         $type_education = $request->input('type_education');
         $education_id = $request->input('education_id');
+
         foreach ($desc as $key => $value)
         {
             $data = [
@@ -64,6 +50,6 @@ class EducationController extends Controller
                 $insert_education = DB::table('tbl_education')->where('id',$education_id[$key])->update($data);
             }
         }
-        return redirect('pages/education');
+        return redirect('pages.profile');
     }
 }

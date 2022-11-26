@@ -31,10 +31,10 @@ class LoginUsersRequest extends FormRequest
     public function messages()
     {
         return [
-            'email.required' => 'Vui lòng nhập email',
-            'email.email' => 'Vui lòng nhập đúng định dạng email',
-            'password.required' => 'Vui lòng nhập password',
-            'password.min' => 'Mật khẩu có độ dài tối thiểu 8 kí tự',
+            'email.required' => '- Vui lòng nhập email',
+            'email.email' => '- Vui lòng nhập đúng định dạng email',
+            'password.required' => '- Vui lòng nhập password',
+            'password.min' => '- Mật khẩu có độ dài tối thiểu 8 kí tự',
         ];
     }
 }

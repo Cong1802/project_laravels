@@ -60,6 +60,6 @@ class SkillController extends Controller
                 $insert_skill = DB::table('tbl_skill')->where('id',$id_skill[$key])->update($data);
             }
         }
-        return redirect('admin/skill');
+        return redirect('profile-setting');
     }
 }

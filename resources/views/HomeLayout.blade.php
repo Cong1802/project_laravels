@@ -33,7 +33,7 @@
     <script src="https://kit.fontawesome.com/95a02bd20d.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script type="module" src="{{ asset("public/frontend/home/js/particle.js") }}"></script>
+    {{-- <script type="module" src="{{ asset("public/frontend/home/js/particle.js") }}"></script> --}}
     <script src={{ asset ("public/frontend/home/js/genaral.js")}}></script> 
     @stack('js');
 </html>
