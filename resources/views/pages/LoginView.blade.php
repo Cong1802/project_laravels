@@ -1,8 +1,7 @@
 @extends('LoginLayout')
 @section('content')
-<div class="box"> 
-  <div class="form">
-    <h2>Sign in </h2>
+<body class="hold-transition login-page">
+  <div class="login-container">
     <form action={{ URL::to('LoginUser')}} method="post">
       @csrf
       <div class="inputbox">
@@ -23,6 +22,8 @@
     </form>
   </div>
 </div>
+</div>
+</body>
 @if ($errors->any())
 <div class="alert alert-danger">
   @foreach ($errors->all() as $error)

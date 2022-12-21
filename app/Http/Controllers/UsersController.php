@@ -12,6 +12,7 @@ use App\User;
 use Mail;
 use DB;
 use Illuminate\Support\Env;
+use Illuminate\Support\Facades\Redirect;
 
 class UsersController extends Controller
 {
@@ -21,103 +22,12 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return view('pages.dashboard');
+        $dataa = DB::table('channel')->get();
+        return view('pages.channel.ListChannel',['dataa'=>$dataa]);
     }
     public function ShowViewLogin()
     {
-        return view('pages.LoginView');
-    }
-    public function ForogtPassView()
-    {
-        return view('pages.forgotPass');
-    }
-    public function RegisterView()
-    {
-        return view('pages.Register');
-    }
-    public function RepassWord($token)
-    {
-        return view('pages.RePassword',['token' => $token]);
-    }
-    public function ForogtPassPost(Request $request)
-    {
-        $email = $request->email;
-        $check_mail = DB::table('users')->where('email', $email)->count();
-        if($check_mail > 0)
-        {
-            $data = DB::table('users')->where('email', $email)->get();
-            Mail::send('repass', compact('data'), function($message) use($email){
-                $message->Subject('Reset Password');
-                $message->to($email,'Forgot Password');
-            });
-            return redirect('/ForogtPassword')->with('notify','Yêu cầu lấy lại mật khẩu đã được gửi tới email của bạn');
-        }
-        else
-        {
-            return redirect('/ForogtPassword')->with('notify','Email không tồn tại');
-        }
-    }
-    public function RepassPost(Request $request)
-    {
-        $this->validate($request,[
-                'password' => 'min:8|required_with:confirm_password|same:confirm_password|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/',
-                'confirm_password' => 'required|min:8',
-            ],
-            [
-                'password.required' => '- Vui lòng nhập password',
-                'password.min' => '- Mật khẩu có độ dài tối thiểu 8 kí tự',
-                'password.same' => '- Mật khẩu chưa trùng khớp',
-                'password.regex' => '- Mật khẩu không hợp lệ<br>
-                                     - Mật khẩu phải có tối thiểu 1 chữ<br>
-                                     - Mật khẩu phải có tối thiểu 1 chữ số<br>
-                                     - Mật khẩu phải có tối thiểu 1 kí tự đặc biệt',
-                'confirm_password.required' => '- Vui lòng xác nhận lại mật khẩu',
-            ]
-        );
-        $data = [
-            'password' => bcrypt($request->password),
-        ];
-        $update_pass = DB::table('users')->where('token',$request->token)->update($data);
-        return redirect('/login')->with('notify','Cập nhật mật khẩu thành công');
-    }
-    public function RegisterAccount(FormRegister $request)
-    {
-        $data = [
-            'name' => $request->username,
-            'email' => $request->email,
-            'password' => bcrypt($request->password),
-            'token' => STR::random(20),
-            'level' => 1,
-            'status' => 0,
-        ];
-        $name = $request->name;
-        $email = $request->email;
-        $check_unique = DB::table('users')->where('email', $email)->count();
-        if($check_unique>0)
-        {
-            return redirect('/register')->with('notify','-Email đăng kí đã tồn tại');
-        }
-        else
-        {
-            $create_account = DB::table('users')->insert($data);
-            Mail::send('mailfb', compact('data'), function($message) use($email,$name){
-                $message->Subject('Account Verification');
-                $message->to($email, $name);
-            });
-            return redirect('/login')->with('notify','Đăng kí tài khoản thành công.Vui lòng kích hoạt tài khoản để sử dụng');
-        }
-    }
-    public function AccountVerification($token)
-    {
-        $verify_account = DB::table('users')->where('token',$token)->update(['status'=>1]);
-        if($verify_account)
-        {
-            return redirect('/login')->with('notify', 'Kích hoạt tài khoản thành công');
-        }
-        else
-        {
-            return redirect('/login')->with('notify', 'Kích hoạt tài khoản không thành công');
-        }
+        return view('LoginLayout');
     }
     public function postLogin(LoginUsersRequest $request)
     {
@@ -127,7 +37,7 @@ class UsersController extends Controller
         ];
         $val = $request->only(['email', 'password']);
         if (Auth::attempt($val)) {
-            return redirect('dashboard');
+            return redirect('ListChannel');
         } else {
             return redirect()->back()->with('notify', 'Email hoặc Password không chính xác');
         }
@@ -137,63 +47,139 @@ class UsersController extends Controller
         Auth::logout();
         return redirect('login');
     }
-    public function Setting()
+    public function ListChannel()
     {
-        $data = DB::table('tbl_setting')->get();
-        return view('pages.setting',['data' => $data]);
+        $categories = DB::table('categories')->get();
+        $min_id = DB::table('categories')->min('category_id');
+        $min_id = isset($_GET['social']) ? $_GET['social'] : $min_id;
+        $dataa = DB::table('channel')
+        ->join('categories', 'categories.category_id','=','channel.category')
+        ->where('channel.category',$min_id)
+        ->get();
+        return view('pages.channel.ListChannel',compact('dataa','min_id','categories'));
     }
-    public function postSetting(Request $request)
+    public function FormChannel()
     {
-        $this->validate($request,[
-                'title' => 'required',
-                'footer' => 'required',
-                'Introduce' => 'required',
-                'email' => 'required|email',
-                'phone' => 'required|min:9|max:11',
-                'address' => 'required',
-            ],
-            [
-                'title.required' => 'Vui lòng nhập title',
-                'footer.required' => 'Vui lòng nhập footer',
-                'Introduce.required' => 'Vui lòng nhập Introduce',
-                'email.required' => 'Vui lòng nhập email',
-                'email.email' => 'Vui lòng nhập đúng định dạng email',
-                'phone.required' => 'Vui lòng nhập phone',
-                'phone.min' => 'Số điện thoại tối thiểu 9 kí tự',
-                'phone.max' => 'Số điện thoại tối đa 11 kí tự',
-                'address.required' => 'Vui lòng nhập address',
-            ]
-        );
-
+        $categories = DB::table('categories')->get();
+        return view('pages.channel.FormChannel',compact('categories'));
+    }
+    public function PushChannel(Request $request)
+    {
+        $validated = $request->validate([
+            'channel_name' => 'required|max:255',
+            'category' => 'required',
+        ]);
         $data = [
-            'title' =>  $request->title,
-            'footer' =>  $request->footer,
-            'Introduce' =>  $request->Introduce,
-            'email' =>  $request->email,
-            'phone' =>  $request->phone,
-            'address' =>  $request->address,
-            'job' =>  ($request->job != '') ? $request->job : 0,
-            'project' =>  ($request->project != '') ? $request->project : 0,
-            'images' =>  ($request->images != '') ? $request->images : 0,
-            'feedback' =>  ($request->feedback != '') ? $request->feedback : 0,
-            'post' =>  ($request->post != '') ? $request->post : 0,
-            'time' =>  time(),
+            'channel_name' => $request->channel_name,
+            'category' => $request->category,
+            'created_at' => time()
         ];
-        if($request->hasFile('logo')) {
-            $file = $request->file('logo');
-            $destinationPath = 'public/upload';
-            $file->move($destinationPath,time().$file->getClientOriginalName());
-            $data['logo'] = time().$file->getClientOriginalName();
+        if ($request->hasFile('file')) {
+            // Nếu có thì thục hiện lưu trữ file vào public/images
+            $image = $request->file('file');
+            $image->move('public/upload', time().$image->getClientOriginalName());
+            $img_name = time().$image->getClientOriginalName();
+            $data['file'] = $img_name;
+            $data['url'] = 'public/upload/'.$img_name;
         }
-        $check_setting = DB::table('tbl_setting')->count();
-        if($check_setting == 0)
+        DB::table('channel')->insert($data);
+        return redirect('/ListChannel');
+    }
+    public function RemoveChannel(Request $request)
+    {
+        $id_news = $request->id_news;
+        $DELETE = DB::table('channel')->where('id',$id_news)->delete();
+        if($DELETE)
         {
-            $insert_Setting = DB::table('tbl_setting')->insert($data);
+            $success = [
+                'status' => '200',
+            ];
+            echo json_encode($success);
         }
-        else
+    }
+    public function EditChannel($id_news)
+    {
+        $categories = DB::table('categories')->get();
+        $dataa = DB::table('channel')->where('id',$id_news)->first();
+        return view('pages.channel.EditChannel',compact('dataa', 'categories'));
+    }
+    public function UpdateChannel(Request $request)
+    {
+        $channel_id = $request->channel_id;
+        $data = [
+            'channel_name' => $request->channel_name,
+            'category' => $request->category,
+        ];
+        if ($request->hasFile('file')) {
+            // Nếu có thì thục hiện lưu trữ file vào public/images
+            $image = $request->file('file');
+            $image->move('public/upload', time().$image->getClientOriginalName());
+            $img_name = time().$image->getClientOriginalName();
+            $data['file'] = $img_name;
+            $data['url'] = 'public/upload/'.$img_name;
+
+            $file = DB::table('channel')->select('file')->where('id',$channel_id)->first();
+            if(file_exists(public_path().'/upload/'.$file->file))
+            {
+                unlink(public_path().'/upload/'.$file->file);
+            }
+        }
+        DB::table('channel')->where('id',$channel_id)->update($data);
+        return redirect('/ListChannel');
+    }
+
+    // ***********************************************
+
+
+    public function FormCategory()
+    {
+        return view('pages.categories.FormCategory');
+    }
+    public function Categories()
+    {
+        $dataa = DB::table('categories')->get();
+        return view('pages.categories.Listcategory',['dataa'=>$dataa]);
+    }
+    public function PushCategory(Request $request)
+    {
+        $data = [
+            'category_name' => $request->category_name,
+            'category_time' => time()
+        ];
+        if ($request->hasFile('file')) {
+            // Nếu có thì thục hiện lưu trữ file vào public/images
+            $image = $request->file('file');
+            $image->move('public/upload', time().$image->getClientOriginalName());
+            $img_name = time().$image->getClientOriginalName();
+            $data['file'] = $img_name;
+        }
+        DB::table('categories')->insert($data);
+        return redirect('/Categories');
+    }
+    public function RemoveCategory(Request $request)
+    {
+        $id_category = $request->id_category;
+        $DELETE = DB::table('categories')->where('category_id',$id_category)->delete();
+        if($DELETE)
         {
-            $update_Setting = DB::table('tbl_setting')->where('id',1)->update($data);
+            $success = [
+                'status' => '200',
+            ];
+            echo json_encode($success);
         }
-        return redirect('setting');
+    }
+    public function EditCategory($id_category)
+    {
+        $dataa = DB::table('categories')->where('category_id',$id_category)->first();
+        return view('pages.categories.Editcategory',['dataa' => $dataa]);
+    }
+    public function UpdateCategory(Request $request)
+    {
+        $id_category = $request->category_id;
+        $data = [
+            'category_name' => $request->category_name,
+        ];
+        DB::table('categories')->where('category_id',$id_category)->update($data);
+        return redirect('/Categories');
     }
 }

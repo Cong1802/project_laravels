@@ -1,25 +1,25 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('home.HomePage');
+        $categories = DB::table('categories')
+        ->get();
+        return view('home.HomePage',compact('categories'));
     }
-    public function creator()
+    public function RenderContent(Request $request)
     {
-        return view('home.creator');
-    }
-    public function Contact()
-    {
-        return view('home.FormContact');
-    }
-    public function test()
-    {
-        return view('test');
+        $category_id = $request->category_id;
+        $channel = DB::table('channel')
+        ->select('id','channel_name','file','url')
+        ->where('channel.category',$category_id)
+        ->get();
+
+        echo json_encode($channel);
     }
 }

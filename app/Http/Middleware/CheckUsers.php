@@ -18,7 +18,7 @@ class CheckUsers
     {
         if(Auth::check())
         {
-            return redirect()->intended('dashboard');
+            return redirect()->intended('ListChannel');
         }
         return $next($request);
     }
